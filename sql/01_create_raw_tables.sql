@@ -113,7 +113,7 @@ CREATE TABLE raw_rec_retirements_2025 (
 	vintage_year TEXT,
 	mwh TEXT,
 	retirement_date TEXT,
-	applied_to_facility TET,
+	applied_to_facility TEXT,
 	certification TEXT
 );
 
