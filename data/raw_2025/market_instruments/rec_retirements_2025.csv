@@ -1,0 +1,5 @@
+batch_id,tracking_system,resource_type,generation_location,vintage_year,mwh,retirement_date,applied_to_facility,certification
+CCP-REC-2025-01,M-RETS,Wind,Texas (ERCOT),2025,18000,2026-02-15,DC-DAL,Green-e Energy Certified
+CCP-REC-2025-02,M-RETS,Wind,Iowa (MISO),2025,12000,2026-02-15,DC-CHI,Green-e Energy Certified
+CCP-REC-2025-03,PJM-GATS,Solar,Pennsylvania (PJM),2025,6000,2026-02-20,DC-PHL,Green-e Energy Certified
+CCP-REC-2023-07,M-RETS,Wind,Oklahoma (SPP),2023,5000,2025-12-10,DC-CMH,Green-e Energy Certified

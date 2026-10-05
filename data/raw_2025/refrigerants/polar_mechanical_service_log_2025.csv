@@ -1,0 +1,207 @@
+WO #,Service Date,Equipment ID,Site,Service Type,Refrigerant,Lbs Added,Lbs Recovered,Technician Notes
+PMS-563225,12/03/2024,PHX-0029,DC-PHX,Leak Repair and Recharge,404A,31.3,0.0,"Low refrigerant alarm. Located leak at condenser coil return bend using electronic leak detector, replaced vibration eliminator."
+PMS-579562,12/04/2024,CLT-0050,DC-CLT,Recover and Recharge,R404A,178.2,127.7,Evacuated and recovered charge to repair defrost termination line. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-531672,12/10/2024,SAC-0033,DC-SAC,Leak Repair and Recharge,404A,100.4,0.0,"Low refrigerant alarm. Located leak at suction line near compressor using electronic leak detector, replaced flare nut."
+PMS-769887,12/11/2024,ATL-0018,DC-ATL,Top Off,R-404A,13.9,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-680353,12/12/2024,DAL-0010,DC-DAL,Leak Repair and Recharge,404A,133.5,0.0,Customer reported warm product zone. Leak at suction line near compressor; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-768024,12/18/2024,ATL-0017,DC-ATL,Preventive Maintenance,R448A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-999282,12/18/2024,ORL-0054,DC-ORL,Preventive Maintenance,R-448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-152826,12/19/2024,PHX-0030,DC-PHX,Preventive Maintenance,R-410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-536229,12/21/2024,DEN-0005,DC-DEN,Recover and Recharge,R-404A,1349.8,1223.1,Evacuated and recovered charge to repair suction line near compressor. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-429538,12/22/2024,DAL-0011,DC-DAL,Leak Repair and Recharge,R-404A,352.0,0.0,"Found oil residue at evaporator coil U-bend indicating leak, replaced flare nut. Recharged and verified pressures."
+PMS-242644,12/24/2024,ORL-0054,DC-ORL,Leak Repair and Recharge,R-448A,149.5,0.0,"Leak found at evaporator coil U-bend, tightened fitting. Recharged system."
+PMS-560193,12/24/2024,SEA-0059,DC-SEA,Leak Repair and Recharge,R-404A,24.2,0.0,"Low refrigerant alarm. Located leak at evaporator coil flare fitting using electronic leak detector, replaced relief valve."
+PMS-490204,12/25/2024,BNA-0083,XD-BNA,Preventive Maintenance,R-134a,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-762334,12/27/2024,ORL-0056,DC-ORL,Preventive Maintenance,R410A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-607426,01/01/2025,PHX-0028,DC-PHX,Leak Repair and Recharge,R404A,251.0,0.0,"Leak found at evaporator coil U-bend, tightened fitting. Recharged system."
+PMS-194460,01/01/2025,SEA-0059,DC-SEA,Leak Repair and Recharge,HFC-404A,35.3,0.0,"Low refrigerant alarm. Located leak at expansion valve flare nut using electronic leak detector, replaced relief valve."
+PMS-253243,01/02/2025,SEA-0059,DC-SEA,Recover and Recharge,R404A,1009.3,826.5,Evacuated and recovered charge to repair rack header brazed joint. Tightened fitting. Recharged with recovered plus virgin refrigerant.
+PMS-502761,01/02/2025,SEA-0060,DC-SEA,Preventive Maintenance,404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-989666,01/04/2025,SEA-0059,DC-SEA,Preventive Maintenance,R-404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-485218,01/06/2025,SEA-0060,DC-SEA,Leak Repair and Recharge,HFC-404A,18.3,0.0,"Found oil residue at receiver relief valve indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-801178,01/07/2025,SEA-0059,DC-SEA,Recover and Recharge,404A,742.9,679.0,Evacuated and recovered charge to repair suction line near compressor. Replaced vibration eliminator. Recharged with recovered plus virgin refrigerant.
+PMS-187600,01/08/2025,PHX-0029,DC-PHX,Recover and Recharge,404A,260.7,185.6,Evacuated and recovered charge to repair rack header brazed joint. Replaced flare nut. Recharged with recovered plus virgin refrigerant.
+PMS-918598,01/09/2025,SAC-0032,DC-SAC,Recover and Recharge,HFC-404A,828.9,811.7,Evacuated and recovered charge to repair defrost termination line. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+PMS-319188,01/10/2025,atl0020,DC-ATL,Top Off,R-410A,1.9,0.0,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+PMS-711209,01/14/2025,SEA-0058,DC-SEA,Leak Repair and Recharge,404A,44.9,0.0,Customer reported warm product zone. Leak at receiver relief valve; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-275518,01/16/2025,BNA-0085,XD-BNA,Preventive Maintenance,R-410A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-889414,01/18/2025,PHX-0029,DC-PHX,Leak Repair and Recharge,R404A,30.8,0.0,"Low refrigerant alarm. Located leak at Schrader valve core using electronic leak detector, replaced relief valve."
+PMS-111452,01/21/2025,CLT-0050,DC-CLT,Leak Repair and Recharge,404A,29.2,0.0,Customer reported warm product zone. Leak at evaporator coil flare fitting; replaced relief valve and added refrigerant.
+PMS-708383,01/23/2025,DAL-0010,DC-DAL,Leak Repair and Recharge,404A,92.8,0.0,"Leak found at liquid line solenoid valve, replaced relief valve. Recharged system."
+PMS-612093,01/23/2025,DAL-0010,DC-DAL,Leak Repair and Recharge,404A,263.3,0.0,Customer reported warm product zone. Leak at evaporator coil flare fitting; tightened fitting and added refrigerant.
+PMS-310820,01/23/2025,PHX-0028,DC-PHX,Leak Repair and Recharge,R404A,89.8,0.0,"Found oil residue at suction line near compressor indicating leak, replaced relief valve. Recharged and verified pressures."
+PMS-279816,01/23/2025,SAC-0034,DC-SAC,Preventive Maintenance,404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-880681,01/23/2025,SEA-0060,DC-SEA,Leak Repair and Recharge,R404A,27.8,0.0,"Leak found at suction line near compressor, repaired and pressure tested with nitrogen. Recharged system."
+PMS-116705,01/25/2025,SAC-0032,DC-SAC,Leak Repair and Recharge,HFC-404A,33.7,0.0,"Found oil residue at liquid line solenoid valve indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-933969,02/02/2025,ATL-0017,DC-ATL,Preventive Maintenance,R-448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-453572,02/05/2025,ATL-0016,DC-ATL,Leak Repair and Recharge,404A,46.0,0.0,"Found oil residue at evaporator coil U-bend indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-142919,02/05/2025,SEA-0058,DC-SEA,Recover and Recharge,R404A,555.6,512.2,Evacuated and recovered charge to repair evaporator coil U-bend. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-512548,02/07/2025,DAL-0012,DC-DAL,Leak Repair and Recharge,404A,84.2,0.0,"Leak found at rack header brazed joint, replaced vibration eliminator. Recharged system."
+PMS-528202,02/07/2025,SEA-0058,DC-SEA,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-575453,02/08/2025,CLT-0049,DC-CLT,Preventive Maintenance,R448A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-360266,02/09/2025,CLT-0051,DC-CLT,Preventive Maintenance,410a,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-594917,02/11/2025,SEA-0058,DC-SEA,Top Off,R404A,11.3,0.0,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+PMS-741056,02/16/2025,dal0011,DC-DAL,Leak Repair and Recharge,R-404A,190.6,0.0,Customer reported warm product zone. Leak at rack header brazed joint; replaced flare nut and added refrigerant.
+PMS-538911,02/17/2025,PHX-0027,DC-PHX,Preventive Maintenance,R-448A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-432464,02/19/2025,PHX-0027,DC-PHX,Leak Repair and Recharge,R-448A,41.7,0.0,Customer reported warm product zone. Leak at suction line near compressor; replaced relief valve and added refrigerant.
+PMS-243960,02/20/2025,PHX-0027,DC-PHX,Leak Repair and Recharge,R448A,163.2,0.0,"Found oil residue at expansion valve flare nut indicating leak, replaced valve core. Recharged and verified pressures."
+PMS-439436,02/20/2025,SAC-0032,DC-SAC,Leak Repair and Recharge,HFC-404A,48.6,0.0,"Low refrigerant alarm. Located leak at liquid line solenoid valve using electronic leak detector, repaired and pressure tested with nitrogen."
+PMS-132006,02/22/2025,DAL-0010,DC-DAL,Recover and Recharge,R404A,1630.2,1499.8,Evacuated and recovered charge to repair condenser coil return bend. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-764272,02/22/2025,DEN-0001,HQ-DEN,Preventive Maintenance,R-410A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-944491,02/22/2025,SAC-0033,DC-SAC,Leak Repair and Recharge,R404A,35.8,0.0,"Found oil residue at receiver relief valve indicating leak, replaced vibration eliminator. Recharged and verified pressures."
+PMS-549526,02/24/2025,ATL-0020,DC-ATL,Preventive Maintenance,410a,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-721099,02/24/2025,DAL-0010,DC-DAL,Leak Repair and Recharge,R404A,109.5,0.0,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, replaced flare nut."
+PMS-320988,03/02/2025,SEA-0059,DC-SEA,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-613932,03/03/2025,SAC-0033,DC-SAC,Leak Repair and Recharge,HFC-404A,67.2,0.0,"Low refrigerant alarm. Located leak at condenser coil return bend using electronic leak detector, tightened fitting."
+PMS-712861,03/04/2025,DEN-0005,DC-DEN,Leak Repair and Recharge,HFC-404A,0.8,0.0,"Low refrigerant alarm. Located leak at expansion valve flare nut using electronic leak detector, brazed joint."
+PMS-245701,03/08/2025,ATL-0016,DC-ATL,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-857172,03/09/2025,dal0009,DC-DAL,Preventive Maintenance,R448A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-898277,03/12/2025,ATL-0015,DC-ATL,Preventive Maintenance,404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-858773,03/12/2025,sac0032,DC-SAC,Preventive Maintenance,R-404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-728287,03/13/2025,DEN-0006,DC-DEN,Top Off,R404A,3.4,0.0,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+PMS-687076,03/14/2025,DAL-0009,DC-DAL,Preventive Maintenance,R-448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-392987,03/15/2025,CLT-0048,DC-CLT,Preventive Maintenance,404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-367084,03/16/2025,SEA-0061,DC-SEA,Top Off,R410A,1.4,0.0,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+PMS-572066,03/17/2025,DEN-0006,DC-DEN,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-359199,03/18/2025,ATL-0015,DC-ATL,Leak Repair and Recharge,R404A,62.3,0.0,Customer reported warm product zone. Leak at rack header brazed joint; tightened fitting and added refrigerant.
+PMS-200696,03/20/2025,sac0033,DC-SAC,Recover and Recharge,R404A,1279.9,1136.9,Evacuated and recovered charge to repair Schrader valve core. Replaced vibration eliminator. Recharged with recovered plus virgin refrigerant.
+PMS-926818,03/25/2025,CLT-0052,DC-CLT,Preventive Maintenance,410a,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-621734,03/26/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,R404A,119.7,0.0,"Found oil residue at condenser coil return bend indicating leak, tightened fitting. Recharged and verified pressures."
+PMS-687009,03/27/2025,DEN-0005,DC-DEN,Top Off,R404A,4.7,0.0,"Minor top-off after low sight glass reading, no leak located."
+PMS-829016,04/07/2025,DAL-0011,DC-DAL,Leak Repair and Recharge,404A,69.8,0.0,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, replaced relief valve."
+PMS-226336,04/14/2025,ATL-0017,DC-ATL,Preventive Maintenance,R-448A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-220313,04/15/2025,PHX-0028,DC-PHX,Leak Repair and Recharge,R-404A,133.1,0.0,Customer reported warm product zone. Leak at liquid line solenoid valve; replaced valve core and added refrigerant.
+PMS-260456,04/16/2025,DEN-0005,DC-DEN,Leak Repair and Recharge,R-404A,215.8,0.0,"Low refrigerant alarm. Located leak at liquid line solenoid valve using electronic leak detector, tightened fitting."
+PMS-108869,04/19/2025,DAL-0011,DC-DAL,Preventive Maintenance,404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-791989,04/20/2025,ATL-0016,DC-ATL,Preventive Maintenance,HFC-404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-944975,04/20/2025,DEN-0006,DC-DEN,Preventive Maintenance,R404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-866895,04/21/2025,sea0062,DC-SEA,Preventive Maintenance,R410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-574200,04/22/2025,CLT-0048,DC-CLT,Recover and Recharge,404A,1176.1,979.5,Evacuated and recovered charge to repair receiver relief valve. Replaced vibration eliminator. Recharged with recovered plus virgin refrigerant.
+PMS-652992,04/22/2025,SEA-0058,DC-SEA,Leak Repair and Recharge,HFC-404A,39.4,0.0,"Found oil residue at evaporator coil U-bend indicating leak, replaced vibration eliminator. Recharged and verified pressures."
+PMS-442518,04/24/2025,ORL-0053,DC-ORL,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-370686,04/25/2025,SAC-0035,DC-SAC,Preventive Maintenance,R-410A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-398826,04/27/2025,CLT-0050,DC-CLT,Preventive Maintenance,R404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-778764,04/27/2025,ORL-0057,DC-ORL,Preventive Maintenance,410a,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-536211,05/01/2025,DEN-0002,HQ-DEN,Preventive Maintenance,R410A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-107848,05/04/2025,ORL-0054,DC-ORL,Leak Repair and Recharge,Solstice N40 (R-448A),58.0,0.0,"Found oil residue at rack header brazed joint indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-468009,05/05/2025,PHX-0028,DC-PHX,Preventive Maintenance,R404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-503798,05/10/2025,ATL-0015,DC-ATL,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-214675,05/14/2025,CLT-0050,DC-CLT,Preventive Maintenance,R-404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-757428,05/14/2025,PHX-0028,DC-PHX,Recover and Recharge,R404A,894.8,839.7,Evacuated and recovered charge to repair evaporator coil U-bend. Replaced valve core. Recharged with recovered plus virgin refrigerant.
+PMS-281719,05/15/2025,DEN-0004,DC-DEN,Leak Repair and Recharge,R448A,132.0,0.0,Customer reported warm product zone. Leak at rack header brazed joint; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-929010,05/17/2025,CLT-0050,DC-CLT,Leak Repair and Recharge,404A,43.2,0.0,"Found oil residue at evaporator coil U-bend indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-734522,05/20/2025,SAC-0036,DC-SAC,Top Off,410a,0.6,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-636040,05/22/2025,DAL-0010,DC-DAL,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-694195,05/22/2025,SAC-0033,DC-SAC,Preventive Maintenance,404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-762029,05/23/2025,ATL-0018,DC-ATL,Leak Repair and Recharge,404A,19.5,0.0,"Found oil residue at rack header brazed joint indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-325459,05/23/2025,SEA-0059,DC-SEA,Leak Repair and Recharge,HFC-404A,34.3,0.0,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, replaced vibration eliminator."
+PMS-149286,05/24/2025,ATL-0015,DC-ATL,Leak Repair and Recharge,404A,3.4,0.0,Customer reported warm product zone. Leak at defrost termination line; replaced flare nut and added refrigerant.
+PMS-859391,06/02/2025,DAL-0011,DC-DAL,Leak Repair and Recharge,R404A,226.5,0.0,"Leak found at defrost termination line, repaired and pressure tested with nitrogen. Recharged system."
+PMS-897582,06/03/2025,DAL-0009,DC-DAL,Leak Repair and Recharge,Solstice N40 (R-448A),105.2,0.0,Customer reported warm product zone. Leak at evaporator coil flare fitting; tightened fitting and added refrigerant.
+PMS-851241,06/06/2025,dal0010,DC-DAL,Leak Repair and Recharge,R404A,95.3,0.0,"Low refrigerant alarm. Located leak at Schrader valve core using electronic leak detector, repaired and pressure tested with nitrogen."
+PMS-247491,06/06/2025,DEN-0005,DC-DEN,Preventive Maintenance,R404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-143389,06/06/2025,ORL-0057,DC-ORL,Leak Repair and Recharge,410a,1.8,0.0,"Leak found at defrost termination line, tightened fitting. Recharged system."
+PMS-875290,06/07/2025,ATL-0017,DC-ATL,Recover and Recharge,R448A,1915.9,1603.5,Evacuated and recovered charge to repair receiver relief valve. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-387758,06/08/2025,DEN-0005,DC-DEN,Leak Repair and Recharge,HFC-404A,63.4,0.0,Customer reported warm product zone. Leak at evaporator coil U-bend; replaced valve core and added refrigerant.
+PMS-993661,06/08/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,404A,21.7,0.0,"Found oil residue at evaporator coil flare fitting indicating leak, replaced valve core. Recharged and verified pressures."
+PMS-695101,06/12/2025,atl0015,DC-ATL,Leak Repair and Recharge,R-404A,498.9,0.0,"Low refrigerant alarm. Located leak at receiver relief valve using electronic leak detector, replaced flare nut."
+PMS-581151,06/13/2025,SEA-0061,DC-SEA,Preventive Maintenance,410a,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-547977,06/14/2025,PHX-0029,DC-PHX,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-296828,06/15/2025,ATL-0017,DC-ATL,Leak Repair and Recharge,R-448A,40.8,0.0,"Found oil residue at evaporator coil flare fitting indicating leak, replaced valve core. Recharged and verified pressures."
+PMS-901906,06/18/2025,PHX-0029,DC-PHX,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-586695,06/19/2025,CLT-0049,DC-CLT,Leak Repair and Recharge,Solstice N40 (R-448A),97.0,0.0,Customer reported warm product zone. Leak at evaporator coil U-bend; replaced relief valve and added refrigerant.
+PMS-730239,06/20/2025,ATL-0015,DC-ATL,Recover and Recharge,R-404A,1369.7,1277.6,Evacuated and recovered charge to repair evaporator coil U-bend. Tightened fitting. Recharged with recovered plus virgin refrigerant.
+PMS-197916,06/22/2025,CLT-0049,DC-CLT,Recover and Recharge,R448A,764.1,693.1,Evacuated and recovered charge to repair evaporator coil flare fitting. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+PMS-804319,06/22/2025,dal0009,DC-DAL,Leak Repair and Recharge,R448A,192.0,0.0,"Leak found at evaporator coil flare fitting, tightened fitting. Recharged system."
+PMS-662471,06/27/2025,ORL-0054,DC-ORL,Preventive Maintenance,Solstice N40 (R-448A),0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-851247,07/01/2025,DEN-0003,HQ-DEN,Leak Repair and Recharge,R-410A,1.1,0.0,"Found oil residue at condenser coil return bend indicating leak, replaced flare nut. Recharged and verified pressures."
+PMS-563082,07/01/2025,ORL-0053,DC-ORL,Preventive Maintenance,HFC-404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-433865,07/06/2025,SEA-0060,DC-SEA,Leak Repair and Recharge,404A,30.3,0.0,"Leak found at defrost termination line, tightened fitting. Recharged system."
+PMS-768254,07/11/2025,CLT-0051,DC-CLT,Top Off,R-410A,1.3,0.0,"Minor top-off after low sight glass reading, no leak located."
+PMS-522247,07/13/2025,SAC-0033,DC-SAC,Preventive Maintenance,R404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-862009,07/17/2025,SEA-0058,DC-SEA,Recover and Recharge,R404A,738.0,713.0,Evacuated and recovered charge to repair condenser coil return bend. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-386867,07/23/2025,PHX-0028,DC-PHX,Leak Repair and Recharge,R404A,22.2,0.0,Customer reported warm product zone. Leak at liquid line solenoid valve; replaced vibration eliminator and added refrigerant.
+PMS-757645,07/24/2025,DEN-0008,DC-DEN,Preventive Maintenance,410a,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-499727,07/25/2025,ATL-0015,DC-ATL,Leak Repair and Recharge,404A,11.5,0.0,Customer reported warm product zone. Leak at suction line near compressor; replaced valve core and added refrigerant.
+PMS-591772,07/25/2025,BNA-0083,XD-BNA,Preventive Maintenance,HFC-134a,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-863071,07/26/2025,DAL-0012,DC-DAL,Preventive Maintenance,HFC-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-686730,07/26/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,R404A,133.5,0.0,"Low refrigerant alarm. Located leak at receiver relief valve using electronic leak detector, brazed joint."
+PMS-927511,07/27/2025,ATL-0019,DC-ATL,Preventive Maintenance,R410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-131949,07/27/2025,DAL-0011,DC-DAL,Preventive Maintenance,404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-966464,08/01/2025,DEN-0004,DC-DEN,Preventive Maintenance,Solstice N40 (R-448A),0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-962464,08/02/2025,DAL-0010,DC-DAL,Preventive Maintenance,HFC-404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-649016,08/03/2025,DEN-0001,HQ-DEN,Leak Repair and Recharge,410a,0.7,0.0,"Found oil residue at rack header brazed joint indicating leak, replaced relief valve. Recharged and verified pressures."
+PMS-252648,08/04/2025,dal0011,DC-DAL,Recover and Recharge,R-404A,1785.4,1735.7,Evacuated and recovered charge to repair evaporator coil flare fitting. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+PMS-646804,08/09/2025,ATL-0015,DC-ATL,Leak Repair and Recharge,HFC-404A,85.2,0.0,Customer reported warm product zone. Leak at expansion valve flare nut; replaced relief valve and added refrigerant.
+PMS-334776,08/10/2025,DAL-0012,DC-DAL,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-940819,08/12/2025,ORL-0055,DC-ORL,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-195313,08/13/2025,SAC-0032,DC-SAC,Preventive Maintenance,R-404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-194430,08/14/2025,DAL-0011,DC-DAL,Decommission,404A,0.0,2874.5,System decommissioned and refrigerant recovered to recovery cylinders for reclaim. Rack removed for replacement.
+PMS-983843,08/16/2025,DEN-0008,DC-DEN,Leak Repair and Recharge,R-410A,1.3,0.0,"Leak found at condenser coil return bend, replaced valve core. Recharged system."
+PMS-464303,08/18/2025,ATL-0018,DC-ATL,Recover and Recharge,HFC-404A,222.9,176.2,Evacuated and recovered charge to repair suction line near compressor. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+PMS-856010,08/18/2025,SAC-0036,DC-SAC,Preventive Maintenance,410a,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-852615,08/19/2025,SLC-0088,XD-SLC,Preventive Maintenance,R410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-719238,08/20/2025,ATL-0017,DC-ATL,Leak Repair and Recharge,R448A,39.7,0.0,"Low refrigerant alarm. Located leak at rack header brazed joint using electronic leak detector, replaced valve core."
+PMS-794722,08/21/2025,DAL-0089,DC-DAL,Installation Initial Charge,R448A,3178.0,0.0,"New R-448A rack installed and commissioned. Initial charge added, pressure tested and verified no leaks."
+PMS-555116,08/21/2025,DEN-0003,HQ-DEN,Preventive Maintenance,R-410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-774759,08/22/2025,atl0016,DC-ATL,Leak Repair and Recharge,R404A,275.6,0.0,Customer reported warm product zone. Leak at expansion valve flare nut; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-722717,08/22/2025,SAC-0034,DC-SAC,Leak Repair and Recharge,R404A,38.6,0.0,"Leak found at defrost termination line, tightened fitting. Recharged system."
+PMS-349413,09/01/2025,DEN-0005,DC-DEN,Leak Repair and Recharge,HFC-404A,40.5,0.0,"Leak found at suction line near compressor, replaced flare nut. Recharged system."
+PMS-936971,09/02/2025,ATL-0018,DC-ATL,Preventive Maintenance,R404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-785921,09/10/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,404A,27.9,0.0,"Found oil residue at evaporator coil U-bend indicating leak, replaced relief valve. Recharged and verified pressures."
+PMS-917593,09/11/2025,SEA-0058,DC-SEA,Preventive Maintenance,HFC-404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-739434,09/15/2025,CLT-0048,DC-CLT,Preventive Maintenance,404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-161677,09/17/2025,ATL-0018,DC-ATL,Preventive Maintenance,HFC-404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-795982,09/18/2025,ORL-0054,DC-ORL,Leak Repair and Recharge,R-448A,104.3,0.0,"Found oil residue at rack header brazed joint indicating leak, replaced valve core. Recharged and verified pressures."
+PMS-585747,09/23/2025,SEA-0058,DC-SEA,Recover and Recharge,R-404A,789.0,488.5,Evacuated and recovered charge to repair expansion valve flare nut. Tightened fitting. Recharged with recovered plus virgin refrigerant.
+PMS-719781,09/23/2025,SEA-0060,DC-SEA,Preventive Maintenance,R404A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-251902,09/24/2025,BNA-0083,XD-BNA,Leak Repair and Recharge,R-134a,3.4,0.0,"Low refrigerant alarm. Located leak at expansion valve flare nut using electronic leak detector, replaced relief valve."
+PMS-325948,09/24/2025,DEN-0004,DC-DEN,Leak Repair and Recharge,R-448A,86.2,0.0,Customer reported warm product zone. Leak at suction line near compressor; replaced valve core and added refrigerant.
+PMS-514137,09/26/2025,SAC-0034,DC-SAC,Preventive Maintenance,404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-305438,10/02/2025,SAC-0032,DC-SAC,Leak Repair and Recharge,R404A,291.3,0.0,Customer reported warm product zone. Leak at suction line near compressor; replaced valve core and added refrigerant.
+PMS-431284,10/04/2025,CLT-0049,DC-CLT,Preventive Maintenance,R448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-176833,10/04/2025,DAL-0012,DC-DAL,Leak Repair and Recharge,404A,27.8,0.0,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, replaced vibration eliminator."
+PMS-114171,10/08/2025,ATL-0018,DC-ATL,Leak Repair and Recharge,HFC-404A,21.5,0.0,Customer reported warm product zone. Leak at condenser coil return bend; replaced vibration eliminator and added refrigerant.
+PMS-475000,10/08/2025,CLT-0048,DC-CLT,Leak Repair and Recharge,R-404A,66.0,0.0,"Found oil residue at evaporator coil U-bend indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-471583,10/08/2025,DAL-0012,DC-DAL,Top Off,404A,9.4,0.0,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+PMS-664177,10/09/2025,SEA-0059,DC-SEA,Leak Repair and Recharge,R404A,34.1,0.0,"Found oil residue at Schrader valve core indicating leak, brazed joint. Recharged and verified pressures."
+PMS-149012,10/11/2025,ATL-0016,DC-ATL,Leak Repair and Recharge,404A,79.8,0.0,"Leak found at liquid line solenoid valve, replaced flare nut. Recharged system."
+PMS-879378,10/14/2025,PHX-0027,DC-PHX,Recover and Recharge,Solstice N40 (R-448A),911.3,827.3,Evacuated and recovered charge to repair suction line near compressor. Repaired and pressure tested with nitrogen. Recharged with recovered plus virgin refrigerant.
+PMS-562050,10/19/2025,CLT-0048,DC-CLT,Top Off,R-404A,7.5,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-645403,10/19/2025,SAC-0034,DC-SAC,Leak Repair and Recharge,404A,28.2,0.0,"Found oil residue at evaporator coil flare fitting indicating leak, brazed joint. Recharged and verified pressures."
+PMS-123101,10/20/2025,DAL-0012,DC-DAL,Leak Repair and Recharge,HFC-404A,6.5,0.0,Customer reported warm product zone. Leak at expansion valve flare nut; replaced relief valve and added refrigerant.
+PMS-508442,10/22/2025,PHX-0028,DC-PHX,Preventive Maintenance,HFC-404A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-179915,10/24/2025,ATL-0018,DC-ATL,Leak Repair and Recharge,404A,27.4,0.0,"Leak found at suction line near compressor, repaired and pressure tested with nitrogen. Recharged system."
+PMS-147580,10/25/2025,ORL-0054,DC-ORL,Preventive Maintenance,R448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-602141,11/02/2025,SEA-0059,DC-SEA,Leak Repair and Recharge,404A,155.6,0.0,"Low refrigerant alarm. Located leak at Schrader valve core using electronic leak detector, replaced vibration eliminator."
+PMS-786795,11/03/2025,DEN-0005,DC-DEN,Preventive Maintenance,404A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-586927,11/03/2025,DEN-0006,DC-DEN,Recover and Recharge,R-404A,227.6,208.5,Evacuated and recovered charge to repair expansion valve flare nut. Replaced flare nut. Recharged with recovered plus virgin refrigerant.
+PMS-693019,11/04/2025,SEA-0062,DC-SEA,Top Off,R410A,2.4,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-134803,11/05/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,404A,34.0,0.0,Customer reported warm product zone. Leak at condenser coil return bend; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-661238,11/06/2025,DAL-0089,DC-DAL,Leak Repair and Recharge,Solstice N40 (R-448A),22.0,0.0,"Post-install warranty call, leak at expansion valve flare nut, tightened fitting and recharged."
+PMS-959181,11/07/2025,DAL-0009,DC-DAL,Leak Repair and Recharge,Solstice N40 (R-448A),104.8,0.0,"Found oil residue at defrost termination line indicating leak, replaced valve core. Recharged and verified pressures."
+PMS-171232,11/11/2025,SLC-0086,XD-SLC,Top Off,134A,5.6,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-910020,11/14/2025,ORL-0055,DC-ORL,Leak Repair and Recharge,404A,37.0,0.0,"Found oil residue at expansion valve flare nut indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-673566,11/15/2025,DAL-0014,DC-DAL,Preventive Maintenance,R-410A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-638452,11/15/2025,PHX-0031,DC-PHX,Preventive Maintenance,R-410A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-168432,11/17/2025,ATL-0016,DC-ATL,Leak Repair and Recharge,404A,85.0,0.0,Customer reported warm product zone. Leak at suction line near compressor; replaced vibration eliminator and added refrigerant.
+PMS-754181,11/17/2025,BNA-0084,XD-BNA,Preventive Maintenance,R410A,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-764218,11/19/2025,ORL-0053,DC-ORL,Leak Repair and Recharge,HFC-404A,96.9,0.0,Customer reported warm product zone. Leak at Schrader valve core; replaced valve core and added refrigerant.
+PMS-645517,11/19/2025,PHX-0030,DC-PHX,Preventive Maintenance,R410A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-141493,11/21/2025,ORL-0055,DC-ORL,Recover and Recharge,HFC-404A,274.2,244.1,Evacuated and recovered charge to repair evaporator coil U-bend. Brazed joint. Recharged with recovered plus virgin refrigerant.
+PMS-582690,11/21/2025,SAC-0033,DC-SAC,Recover and Recharge,404A,1540.5,1269.7,Evacuated and recovered charge to repair defrost termination line. Tightened fitting. Recharged with recovered plus virgin refrigerant.
+PMS-379866,11/23/2025,ORL-0055,DC-ORL,Preventive Maintenance,R-404A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-584601,11/24/2025,DAL-0013,DC-DAL,Preventive Maintenance,410a,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-938061,11/24/2025,ORL-0056,DC-ORL,Preventive Maintenance,R-410A,0.0,0.0,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+PMS-555031,11/27/2025,DEN-0004,DC-DEN,Preventive Maintenance,R448A,0.0,0.0,"Annual leak inspection with electronic detector, no leaks found."
+PMS-250709,11/27/2025,DEN-0006,DC-DEN,Leak Repair and Recharge,HFC-404A,65.6,0.0,"Low refrigerant alarm. Located leak at suction line near compressor using electronic leak detector, brazed joint."
+PMS-249795,12/04/2025,PHX-0029,DC-PHX,Top Off,R-404A,5.0,0.0,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+PMS-113151,12/11/2025,PHX-0029,DC-PHX,Leak Repair and Recharge,HFC-404A,8.9,0.0,Customer reported warm product zone. Leak at expansion valve flare nut; replaced vibration eliminator and added refrigerant.
+PMS-768875,12/12/2025,BNA-0085,XD-BNA,Leak Repair and Recharge,R410A,2.3,0.0,"Leak found at rack header brazed joint, replaced vibration eliminator. Recharged system."
+PMS-365853,12/15/2025,CLT-0048,DC-CLT,Recover and Recharge,R-404A,1326.1,1141.2,Evacuated and recovered charge to repair receiver relief valve. Replaced valve core. Recharged with recovered plus virgin refrigerant.
+PMS-119316,12/15/2025,SAC-0032,DC-SAC,Leak Repair and Recharge,R404A,152.6,0.0,Customer reported warm product zone. Leak at rack header brazed joint; replaced valve core and added refrigerant.
+PMS-663563,12/16/2025,SLC-0087,XD-SLC,Preventive Maintenance,410a,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+PMS-210968,12/17/2025,SAC-0034,DC-SAC,Leak Repair and Recharge,R-404A,27.0,0.0,Customer reported warm product zone. Leak at evaporator coil U-bend; repaired and pressure tested with nitrogen and added refrigerant.
+PMS-311858,12/20/2025,DEN-0005,DC-DEN,Leak Repair and Recharge,R-404A,368.1,0.0,"Found oil residue at defrost termination line indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+PMS-492132,12/21/2025,DEN-0007,DC-DEN,Preventive Maintenance,410a,0.0,0.0,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+PMS-658845,12/24/2025,PHX-0027,DC-PHX,Preventive Maintenance,R-448A,0.0,0.0,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."

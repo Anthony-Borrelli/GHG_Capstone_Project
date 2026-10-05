@@ -1,0 +1,13 @@
+Customer,Account,Service,From,To,Usage,Units
+Beehive Logistics LLC,8546814108,Electric,2025-01-01,2025-01-31,70967,kWh
+Beehive Logistics LLC,8546814108,Electric,2025-02-01,2025-02-28,74507,kWh
+Beehive Logistics LLC,8546814108,Electric,2025-03-01,2025-03-31,78726,kWh
+Beehive Logistics LLC,8546814108,Electric,2025-04-01,2025-04-30,71842,kWh
+Beehive Logistics LLC,8546814108,Electric,2025-05-01,2025-05-31,99855,kWh
+Beehive Logistics LLC,8546814108,Electric,2025-06-01,2025-06-30,103345,kWh
+Beehive Logistics LLC,6290138197,Natural Gas,2025-01-01,2025-01-31,4688,therms
+Beehive Logistics LLC,6290138197,Natural Gas,2025-02-01,2025-02-28,4568,therms
+Beehive Logistics LLC,6290138197,Natural Gas,2025-03-01,2025-03-31,2734,therms
+Beehive Logistics LLC,6290138197,Natural Gas,2025-04-01,2025-04-30,1940,therms
+Beehive Logistics LLC,6290138197,Natural Gas,2025-05-01,2025-05-31,708,therms
+Beehive Logistics LLC,6290138197,Natural Gas,2025-06-01,2025-06-30,356,therms

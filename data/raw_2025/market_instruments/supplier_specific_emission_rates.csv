@@ -1,0 +1,4 @@
+utility_name,product,year,co2_lb_per_mwh,source_note
+Valley Municipal Utility District,Standard Service Mix,2025,385.0,Utility power content label
+Valley Municipal Utility District,Renewable Choice (100% renewable),2025,0.0,Utility green tariff; CCP enrolled 50% of load
+Front Range Power,Standard Service Mix,2025,1105.0,Utility-published delivered emission rate

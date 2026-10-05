@@ -1,0 +1,55 @@
+facility_id,entry_date,entry_type,value,unit,tank_capacity_gal
+DC-ATL,2025-01-02,Tank Reading,1197.0,gal,2000
+DC-ATL,2025-03-10,Delivery,281.0,gal,2000
+DC-ATL,2025-07-06,Delivery,275.0,gal,2000
+DC-ATL,2025-10-14,Delivery,276.0,gal,2000
+DC-ATL,2025-12-31,Tank Reading,1226.9,gal,2000
+DC-CHI,2025-01-02,Tank Reading,1806.0,gal,2500
+DC-CHI,2025-07-18,Delivery,744.0,gal,2500
+DC-CHI,2025-07-19,Delivery,816.0,gal,2500
+DC-CHI,2025-08-04,Delivery,769.0,gal,2500
+DC-CHI,2025-12-31,Tank Reading,1755.0,gal,2500
+DC-CLT,2025-01-02,Tank Reading,68.3,% full,2000
+DC-CLT,2025-05-06,Delivery,445.0,gal,2000
+DC-CLT,2025-12-31,Tank Reading,66.9,% full,2000
+DC-CMH,2025-01-02,Tank Reading,1293.0,gal,2000
+DC-CMH,2025-04-22,Delivery,297.0,gal,2000
+DC-CMH,2025-12-31,Tank Reading,1272.2,gal,2000
+DC-DAL,2025-01-02,Tank Reading,1274.0,gal,2000
+DC-DAL,2025-03-05,Delivery,256.0,gal,2000
+DC-DAL,2025-07-17,Delivery,245.0,gal,2000
+DC-DAL,2025-10-20,Delivery,255.0,gal,2000
+DC-DAL,2025-12-31,Tank Reading,1255.8,gal,2000
+DC-DEN,2025-01-02,Tank Reading,1172.0,gal,2000
+DC-DEN,2025-07-13,Delivery,502.0,gal,2000
+DC-DEN,2025-12-31,Tank Reading,1161.0,gal,2000
+DC-KCK,2025-01-02,Tank Reading,1607.0,gal,2000
+DC-KCK,2025-06-09,Delivery,383.0,gal,2000
+DC-KCK,2025-12-31,Tank Reading,1579.1,gal,2000
+DC-MSP,2025-01-02,Tank Reading,78.4,% full,2000
+DC-MSP,2025-03-18,Delivery,201.0,gal,2000
+DC-MSP,2025-07-24,Delivery,230.0,gal,2000
+DC-MSP,2025-10-13,Delivery,215.0,gal,2000
+DC-MSP,2025-12-31,Tank Reading,79.2,% full,2000
+DC-ORL,2025-01-02,Tank Reading,1559.0,gal,2000
+DC-ORL,2025-05-09,Delivery,384.0,gal,2000
+DC-ORL,2025-12-31,Tank Reading,1542.7,gal,2000
+DC-PHL,2025-01-02,Tank Reading,1117.0,gal,2000
+DC-PHL,2025-03-18,Delivery,297.0,gal,2000
+DC-PHL,2025-07-24,Delivery,263.0,gal,2000
+DC-PHL,2025-10-06,Delivery,264.0,gal,2000
+DC-PHL,2025-12-31,Tank Reading,1068.3,gal,2000
+DC-PHX,2025-01-02,Tank Reading,1621.0,gal,2000
+DC-PHX,2025-03-11,Delivery,237.0,gal,2000
+DC-PHX,2025-07-17,Delivery,226.0,gal,2000
+DC-PHX,2025-10-13,Delivery,226.0,gal,2000
+DC-PHX,2025-12-31,Tank Reading,1618.8,gal,2000
+DC-SAC,2025-01-02,Tank Reading,1304.0,gal,2000
+DC-SAC,2025-08-20,Delivery,550.0,gal,2000
+DC-SAC,2025-12-31,Tank Reading,1336.9,gal,2000
+DC-SEA,2025-01-02,Tank Reading,62.1,% full,2000
+DC-SEA,2025-06-06,Delivery,470.0,gal,2000
+DC-SEA,2025-12-31,Tank Reading,62.6,% full,2000
+HQ-DEN,2025-01-02,Tank Reading,419.0,gal,500
+HQ-DEN,2025-09-11,Delivery,81.0,gal,500
+HQ-DEN,2025-12-31,Tank Reading,415.6,gal,500

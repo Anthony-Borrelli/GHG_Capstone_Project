@@ -1,0 +1,21 @@
+# SQLite database (rebuilt by running the SQL files in order)
+db/
+*.db
+*.db-journal
+
+# Answer key (for checking my work, not part of the portfolio)
+data/answer_key/
+
+# Power BI temporary and backup files
+*.pbix.bak
+~$*
+
+# DBeaver project settings
+.dbeaver/
+.project
+.settings/
+
+# Operating system clutter
+.DS_Store
+Thumbs.db
+desktop.ini

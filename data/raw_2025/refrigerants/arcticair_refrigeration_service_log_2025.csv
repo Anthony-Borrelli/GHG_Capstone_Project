@@ -1,0 +1,136 @@
+work_order,date,asset_tag,location,job_type,gas_type,qty_charged,qty_recovered,qty_uom,tech_comments
+AA47621,2025-01-01,MSP-0044,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA40956,2025-01-08,CHI-0022,Chicago Distribution Center,PREVENTIVE MAINTENANCE,404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA54826,2025-01-08,MSP-0045,Minneapolis Distribution Center,RECOVER AND RECHARGE,404A,98.29,71.94,kg,Evacuated and recovered charge to repair receiver relief valve. Replaced vibration eliminator. Recharged with recovered plus virgin refrigerant.
+AA12309,2025-01-10,KCK-0069,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,7.89,0.0,kg,"Leak found at rack header brazed joint, repaired and pressure tested with nitrogen. Recharged system."
+AA33206,2025-01-10,KCK-0071,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA81608,2025-01-11,MSP-0043,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,404A,9.66,0.0,kg,"Low refrigerant alarm. Located leak at Schrader valve core using electronic leak detector, repaired and pressure tested with nitrogen."
+AA85147,2025-01-12,CMH-0037,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R448A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA46365,2025-01-14,CHI-0024,Chicago Distribution Center,TOP OFF,R404A,4.76,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA11757,2025-01-16,CHI-0021,Chicago Distribution Center,PREVENTIVE MAINTENANCE,R-448A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA91113,2025-01-18,CMH-0037,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R448A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA79612,2025-01-19,MSP-0045,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA87534,2025-01-19,STL-0079,St. Louis Cross-Dock,LEAK REPAIR AND RECHARGE,R-134a,1.09,0.0,kg,"Low refrigerant alarm. Located leak at condenser coil return bend using electronic leak detector, replaced valve core."
+AA84609,2025-01-22,ALB-0075,Albany Cross-Dock,PREVENTIVE MAINTENANCE,R-134a,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA87576,2025-01-24,CMH-0042,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R22,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA56060,2025-02-03,PHL-0067,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,R410A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA86474,2025-02-05,CMH-0038,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA33855,2025-02-05,KCK-0069,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA36873,2025-02-10,MSP-0045,Minneapolis Distribution Center,RECOVER AND RECHARGE,HFC-404A,133.36,119.34,kg,Evacuated and recovered charge to repair suction line near compressor. Replaced valve core. Recharged with recovered plus virgin refrigerant.
+AA48808,2025-02-13,CMH-0039,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA30132,2025-02-14,CHI-0021,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,Solstice N40 (R-448A),122.47,0.0,kg,"Found oil residue at suction line vibration crack indicating leak, replaced flare nut. Recharged and verified pressures."
+AA83879,2025-02-15,CHI-0025,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R410A,0.36,0.0,kg,"Found oil residue at Schrader valve core indicating leak, tightened fitting. Recharged and verified pressures."
+AA66725,2025-02-15,MSP-0047,Minneapolis Distribution Center,TOP OFF,410a,0.86,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA54485,2025-02-16,CHI-0023,Chicago Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA41295,2025-02-18,MSP-0043,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,R404A,92.22,0.0,kg,"Found oil residue at receiver relief valve indicating leak, tightened fitting. Recharged and verified pressures."
+AA82852,2025-02-18,MSP-0043,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA84776,2025-02-20,CHI-0021,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,Solstice N40 (R-448A),30.44,0.0,kg,Customer reported warm product zone. Leak at vibration eliminator on suction line; tightened fitting and added refrigerant.
+AA76023,2025-02-21,ALB-0075,Albany Cross-Dock,LEAK REPAIR AND RECHARGE,HFC-134a,4.49,0.0,kg,Customer reported warm product zone. Leak at receiver relief valve; brazed joint and added refrigerant.
+AA87831,2025-02-22,CHI-0023,Chicago Distribution Center,PREVENTIVE MAINTENANCE,404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA60801,2025-02-22,CHI-0024,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R404A,13.61,0.0,kg,"Found oil residue at rack header vibration crack at discharge manifold indicating leak, replaced valve core. Recharged and verified pressures."
+AA36794,2025-02-24,KCK-0069,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,R404A,67.63,0.0,kg,"Found oil residue at defrost termination line indicating leak, replaced relief valve. Recharged and verified pressures."
+AA30302,2025-03-01,MSP-0043,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,2.09,0.0,kg,"Found oil residue at liquid line solenoid valve indicating leak, replaced vibration eliminator. Recharged and verified pressures."
+AA98459,2025-03-10,KCK-0070,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,404A,0.23,0.0,kg,Customer reported warm product zone. Leak at Schrader valve core; repaired and pressure tested with nitrogen and added refrigerant.
+AA93723,2025-03-14,MSP-0044,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,R404A,73.75,0.0,kg,"Leak found at Schrader valve core, replaced flare nut. Recharged system."
+AA81417,2025-03-16,CHI-0023,Chicago Distribution Center,TOP OFF,404A,1.5,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA30262,2025-03-16,PHL-0064,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,R448A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA68609,2025-03-24,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,14.02,0.0,kg,Customer reported warm product zone. Leak at vibration eliminator on suction line; tightened fitting and added refrigerant.
+AA59410,2025-04-03,KCK-0072,Kansas City Distribution Center,TOP OFF,R-410A,0.27,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA34248,2025-04-03,PHL-0064,Philadelphia Distribution Center,TOP OFF,Solstice N40 (R-448A),2.68,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA87760,2025-04-07,MSP-0045,Minneapolis Distribution Center,TOP OFF,404A,4.22,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA45831,2025-04-08,MSP-0045,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA78943,2025-04-08,MSP-0046,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R410A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA19272,2025-04-12,CHI-0021,Chicago Distribution Center,PREVENTIVE MAINTENANCE,R448A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA66100,2025-04-17,PHL-0064,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,Solstice N40 (R-448A),0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA90812,2025-04-22,KCK-0071,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,33.88,0.0,kg,"Leak found at evaporator coil U-bend, replaced flare nut. Recharged system."
+AA34322,2025-04-26,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,404A,136.4,0.0,kg,"Leak found at rack header vibration crack at discharge manifold, tightened fitting. Recharged system."
+AA37790,2025-05-04,CHI-0023,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,404A,187.79,0.0,kg,"Leak found at evaporator coil U-bend, replaced vibration eliminator. Recharged system."
+AA65812,2025-05-06,KCK-0074,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,R-407C,19.91,0.0,kg,"Found oil residue at suction line near compressor indicating leak, brazed joint. Recharged and verified pressures."
+AA51350,2025-05-09,PHL-0064,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R448A,68.99,0.0,kg,"Low refrigerant alarm. Located leak at suction line near compressor using electronic leak detector, brazed joint."
+AA86127,2025-05-10,ALB-0077,Albany Cross-Dock,TOP OFF,R-410A,1.09,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA23990,2025-05-16,MSP-0044,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,R404A,140.61,0.0,kg,"Leak found at evaporator coil flare fitting, replaced vibration eliminator. Recharged system."
+AA62135,2025-05-19,CMH-0039,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,20.23,0.0,kg,Customer reported warm product zone. Leak at defrost termination line; replaced relief valve and added refrigerant.
+AA76642,2025-05-20,CHI-0026,Chicago Distribution Center,TOP OFF,410a,0.54,0.0,kg,"Minor top-off after low sight glass reading, no leak located."
+AA19007,2025-05-20,MSP-0043,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA73206,2025-05-23,MSP-0043,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,47.26,0.0,kg,"Found oil residue at receiver relief valve indicating leak, replaced vibration eliminator. Recharged and verified pressures."
+AA50520,2025-06-09,KCK-0074,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,R-407C,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA18874,2025-06-10,PHL-0066,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,404A,20.28,0.0,kg,Customer reported warm product zone. Leak at expansion valve flare nut; replaced flare nut and added refrigerant.
+AA79043,2025-06-12,MSP-0044,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA75152,2025-06-14,KCK-0070,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA98264,2025-06-15,PHL-0065,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA53557,2025-06-16,KCK-0069,Kansas City Distribution Center,TOP OFF,R-404A,4.99,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA34873,2025-06-18,MSP-0043,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,404A,37.47,0.0,kg,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, tightened fitting."
+AA19393,2025-06-19,CHI-0023,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R404A,187.97,0.0,kg,Customer reported warm product zone. Leak at suction line vibration crack; replaced vibration eliminator and added refrigerant.
+AA98630,2025-06-24,CMH-0037,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,R448A,56.65,0.0,kg,Customer reported warm product zone. Leak at expansion valve flare nut; replaced valve core and added refrigerant.
+AA99202,2025-06-26,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R404A,99.65,0.0,kg,"Leak found at rack header vibration crack at discharge manifold, replaced relief valve. Recharged system."
+AA86480,2025-07-19,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,521.63,0.0,kg,"Emergency call. Major leak on rack header due to vibration crack at discharge manifold, most of charge lost. Brazed and pressure tested with nitrogen, evacuated and recharged. Recommend vibration isolation upgrade."
+AA60666,2025-07-20,CMH-0037,Columbus Distribution Center,RECOVER AND RECHARGE,R448A,481.08,440.35,kg,Evacuated and recovered charge to repair expansion valve flare nut. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+AA59020,2025-07-21,KCK-0071,Kansas City Distribution Center,TOP OFF,HFC-404A,1.36,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA97048,2025-07-22,CHI-0023,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,236.37,0.0,kg,"Found oil residue at vibration eliminator on suction line indicating leak, replaced flare nut. Recharged and verified pressures."
+AA24432,2025-07-25,CMH-0042,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,HCFC-22,4.63,0.0,kg,Customer reported warm product zone. Leak at evaporator coil flare fitting; replaced flare nut and added refrigerant.
+AA51389,2025-07-26,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R404A,66.04,0.0,kg,"Leak found at expansion valve flare nut, repaired and pressure tested with nitrogen. Recharged system."
+AA12149,2025-08-03,KCK-0072,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA24916,2025-08-06,STL-0082,St. Louis Cross-Dock,TOP OFF,HCFC-22,3.9,0.0,kg,"Minor top-off after low sight glass reading, no leak located."
+AA41950,2025-08-10,MSP-0043,Minneapolis Distribution Center,TOP OFF,R404A,2.36,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA67085,2025-08-11,PHL-0067,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R-410A,0.32,0.0,kg,"Found oil residue at condenser coil return bend indicating leak, tightened fitting. Recharged and verified pressures."
+AA36743,2025-08-16,CHI-0024,Chicago Distribution Center,PREVENTIVE MAINTENANCE,404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA81920,2025-08-19,CHI-0022,Chicago Distribution Center,RECOVER AND RECHARGE,404A,589.94,466.29,kg,Evacuated and recovered charge to repair suction line near compressor. Brazed joint. Recharged with recovered plus virgin refrigerant.
+AA35444,2025-08-20,PHL-0065,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA84939,2025-08-27,MSP-0044,Minneapolis Distribution Center,RECOVER AND RECHARGE,R404A,388.41,359.88,kg,Evacuated and recovered charge to repair evaporator coil U-bend. Replaced vibration eliminator. Recharged with recovered plus virgin refrigerant.
+AA95376,2025-08-27,PHL-0063,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R448A,3.58,0.0,kg,"Found oil residue at condenser coil return bend indicating leak, repaired and pressure tested with nitrogen. Recharged and verified pressures."
+AA75149,2025-09-02,STL-0081,St. Louis Cross-Dock,PREVENTIVE MAINTENANCE,R-410A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA82151,2025-09-03,ALB-0077,Albany Cross-Dock,PREVENTIVE MAINTENANCE,R410A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA37400,2025-09-03,ALB-0078,Albany Cross-Dock,TOP OFF,HCFC-22,4.08,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA99167,2025-09-03,CHI-0023,Chicago Distribution Center,TOP OFF,R-404A,4.9,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA43793,2025-09-06,CMH-0038,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,57.38,0.0,kg,"Found oil residue at evaporator coil U-bend indicating leak, tightened fitting. Recharged and verified pressures."
+AA71872,2025-09-08,KCK-0070,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA39198,2025-09-08,PHL-0066,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R404A,12.79,0.0,kg,Customer reported warm product zone. Leak at Schrader valve core; replaced vibration eliminator and added refrigerant.
+AA24696,2025-09-12,CHI-0023,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,108.27,0.0,kg,"Leak found at rack header vibration crack at discharge manifold, repaired and pressure tested with nitrogen. Recharged system."
+AA28570,2025-09-12,CMH-0039,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R404A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA23429,2025-09-13,PHL-0064,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R448A,97.25,0.0,kg,"Leak found at Schrader valve core, replaced valve core. Recharged system."
+AA73379,2025-09-14,CMH-0040,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R-410A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA44314,2025-09-17,PHL-0065,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R404A,117.62,0.0,kg,"Found oil residue at liquid line solenoid valve indicating leak, tightened fitting. Recharged and verified pressures."
+AA88896,2025-09-18,PHL-0063,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R448A,91.94,0.0,kg,Customer reported warm product zone. Leak at Schrader valve core; replaced valve core and added refrigerant.
+AA13632,2025-09-19,ALB-0078,Albany Cross-Dock,PREVENTIVE MAINTENANCE,HCFC-22,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA65310,2025-09-21,CHI-0024,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,18.46,0.0,kg,Customer reported warm product zone. Leak at suction line vibration crack; tightened fitting and added refrigerant.
+AA52353,2025-09-21,CMH-0039,Columbus Distribution Center,RECOVER AND RECHARGE,HFC-404A,103.46,90.17,kg,Evacuated and recovered charge to repair evaporator coil flare fitting. Replaced relief valve. Recharged with recovered plus virgin refrigerant.
+AA93450,2025-09-21,KCK-0073,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA82783,2025-09-22,PHL-0066,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA78384,2025-09-23,PHL-0063,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,Solstice N40 (R-448A),21.5,0.0,kg,Customer reported warm product zone. Leak at evaporator coil flare fitting; tightened fitting and added refrigerant.
+AA11896,2025-09-27,KCK-0071,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA97630,2025-10-04,CHI-0024,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,27.35,0.0,kg,"Leak found at Schrader valve core, replaced flare nut. Recharged system."
+AA20081,2025-10-06,CHI-0021,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-448A,15.15,0.0,kg,"Low refrigerant alarm. Located leak at receiver relief valve using electronic leak detector, replaced flare nut."
+AA55721,2025-10-10,CHI-0025,Chicago Distribution Center,PREVENTIVE MAINTENANCE,R410A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA97321,2025-10-10,KCK-0070,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,404A,86.68,0.0,kg,Customer reported warm product zone. Leak at evaporator coil flare fitting; tightened fitting and added refrigerant.
+AA84990,2025-10-13,CMH-0038,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA25031,2025-10-15,CHI-0024,Chicago Distribution Center,TOP OFF,R404A,4.63,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA20091,2025-10-16,CHI-0024,Chicago Distribution Center,PREVENTIVE MAINTENANCE,R-404A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA82776,2025-10-16,CMH-0039,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,14.88,0.0,kg,"Found oil residue at suction line near compressor indicating leak, replaced vibration eliminator. Recharged and verified pressures."
+AA12264,2025-10-17,PHL-0068,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA67769,2025-10-17,STL-0079,St. Louis Cross-Dock,PREVENTIVE MAINTENANCE,HFC-134a,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA68057,2025-11-04,PHL-0065,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,55.57,0.0,kg,"Low refrigerant alarm. Located leak at defrost termination line using electronic leak detector, replaced valve core."
+AA13643,2025-11-06,MSP-0044,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,74.75,0.0,kg,Customer reported warm product zone. Leak at rack header brazed joint; tightened fitting and added refrigerant.
+AA23546,2025-11-08,CMH-0038,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,R404A,21.59,0.0,kg,"Found oil residue at evaporator coil U-bend indicating leak, replaced relief valve. Recharged and verified pressures."
+AA54680,2025-11-09,KCK-0074,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,407C,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA56055,2025-11-10,CHI-0026,Chicago Distribution Center,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA33471,2025-11-10,PHL-0063,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,Solstice N40 (R-448A),0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA60954,2025-11-13,MSP-0044,Minneapolis Distribution Center,LEAK REPAIR AND RECHARGE,R404A,17.06,0.0,kg,"Found oil residue at suction line near compressor indicating leak, replaced flare nut. Recharged and verified pressures."
+AA52755,2025-11-14,PHL-0063,Philadelphia Distribution Center,LEAK REPAIR AND RECHARGE,R448A,114.85,0.0,kg,"Leak found at suction line near compressor, brazed joint. Recharged system."
+AA10987,2025-11-15,STL-0082,St. Louis Cross-Dock,PREVENTIVE MAINTENANCE,R-22,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA81516,2025-11-22,CHI-0022,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,R-404A,37.47,0.0,kg,Customer reported warm product zone. Leak at evaporator coil flare fitting; replaced flare nut and added refrigerant.
+AA95601,2025-11-23,STL-0080,St. Louis Cross-Dock,LEAK REPAIR AND RECHARGE,R410A,0.59,0.0,kg,Customer reported warm product zone. Leak at liquid line solenoid valve; replaced flare nut and added refrigerant.
+AA88237,2025-11-27,PHL-0063,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,R-448A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA15898,2025-12-03,PHL-0065,Philadelphia Distribution Center,TOP OFF,HFC-404A,5.44,0.0,kg,"Added refrigerant to restore subcooling, suspect slow leak, recommend follow-up leak search."
+AA13668,2025-12-05,KCK-0069,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,R404A,52.98,0.0,kg,"Low refrigerant alarm. Located leak at suction line near compressor using electronic leak detector, replaced relief valve."
+AA66109,2025-12-05,STL-0080,St. Louis Cross-Dock,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA36837,2025-12-07,CHI-0022,Chicago Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,"PM inspection, cleaned drain pan and checked defrost heaters. No leak found."
+AA32610,2025-12-07,MSP-0047,Minneapolis Distribution Center,PREVENTIVE MAINTENANCE,410a,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA35866,2025-12-10,CMH-0041,Columbus Distribution Center,PREVENTIVE MAINTENANCE,R-410A,0.0,0.0,kg,"Quarterly PM complete. Checked pressures and superheat, all normal. No refrigerant added."
+AA15520,2025-12-11,KCK-0070,Kansas City Distribution Center,TOP OFF,R404A,3.67,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA58285,2025-12-13,CMH-0039,Columbus Distribution Center,TOP OFF,HFC-404A,2.59,0.0,kg,"Topped off system, slight frost buildup noted on evaporator. Will monitor."
+AA95698,2025-12-15,CHI-0021,Chicago Distribution Center,LEAK REPAIR AND RECHARGE,Solstice N40 (R-448A),143.88,0.0,kg,Customer reported warm product zone. Leak at defrost termination line; replaced relief valve and added refrigerant.
+AA81110,2025-12-15,KCK-0069,Kansas City Distribution Center,PREVENTIVE MAINTENANCE,HFC-404A,0.0,0.0,kg,Routine preventive maintenance. No leaks detected. Condenser coil cleaned.
+AA94495,2025-12-17,KCK-0071,Kansas City Distribution Center,LEAK REPAIR AND RECHARGE,HFC-404A,6.53,0.0,kg,"Leak found at defrost termination line, replaced relief valve. Recharged system."
+AA21640,2025-12-17,MSP-0044,Minneapolis Distribution Center,RECOVER AND RECHARGE,HFC-404A,477.95,476.86,kg,Evacuated and recovered charge to repair evaporator coil flare fitting. Replaced valve core. Recharged with recovered plus virgin refrigerant.
+AA70008,2025-12-19,PHL-0066,Philadelphia Distribution Center,PREVENTIVE MAINTENANCE,404A,0.0,0.0,kg,"Annual leak inspection with electronic detector, no leaks found."
+AA44125,2025-12-21,CMH-0037,Columbus Distribution Center,LEAK REPAIR AND RECHARGE,R-448A,31.12,0.0,kg,"Low refrigerant alarm. Located leak at expansion valve flare nut using electronic leak detector, replaced vibration eliminator."

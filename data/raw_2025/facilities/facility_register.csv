@@ -1,0 +1,21 @@
+facility_id,site_number,facility_name,facility_type,street,city,state,zip,sqft,ownership,utilities_paid_by,acquisition_date,lease_end_date,status,nearest_weather_station,record_updated
+XD-ALB,201,Albany Cross-Dock,Cross-Dock,40 Railroad Avenue,Albany,NY,12205,75000,Leased,Tenant/Owner,,10/31/2025,Closed,KALB,2025-11-03
+DC-DAL,102,Dallas Distribution Center,Distribution Center,2200 Singleton Blvd,Dallas,Texas,75212,420000,Owned,Tenant/Owner,,,Active,KDFW,2025-01-15
+DC-DEN,101,Denver Distribution Center,Distribution Center,5100 Brighton Blvd,Denver,CO,80216,320000,Owned,Tenant/Owner,,,Active,KDEN,2025-01-15
+XD-SLC,204,Salt Lake City Cross-Dock,Cross-Dock,1900 W 2100 S,Salt Lake City,UT,84104,70000,Owned,Tenant/Owner,"July 01, 2025",,Active,KSLC,2025-07-02
+DC-CHI,104,Chicago Distribution Center,Distribution Center,6500 W 65th Street,Bedford Park,IL,60638,450000,Owned,Tenant/Owner,,,Active,KMDW,2025-01-15
+XD-BNA,203,Nashville Cross-Dock,Cross-Dock,700 Allied Drive,Nashville,TN,37210,85000,Owned,Tenant/Owner,,,Active,KBNA,2025-01-15
+DC-SAC,106,Sacramento Distribution Center,Distribution Center,8300 Fruitridge Road,Sacramento,CA,95828,"310,000",Owned,Tenant/Owner,,,Active,KSMF,2025-01-15
+DC-CMH,107,Columbus Distribution Center,Distribution Center,2900 Alum Creek Drive,Columbus,OH,43207,280000,Owned,Tenant/Owner,,,Active,KCMH,2025-01-15
+XD-STL,202,St. Louis Cross-Dock,Cross-Dock,9200 Natural Bridge Road,St. Louis,MO,63134,"90,000",Leased,Tenant/Owner,,,Active,KSTL,2025-01-15
+DC-PHL,112,Philadelphia Distribution Center,Distribution Center,3400 S 61st Street,Philadelphia,PA,19153,"350,000",Owned,Tenant/Owner,,,Active,KPHL,2025-01-15
+DC-CLT,109,Charlotte Distribution Center,Distribution Center,11000 Westinghouse Blvd,Charlotte,NC,28273,"290,000",Owned,Tenant/Owner,,,Active,KCLT,2025-01-15
+DC-SEA,111,Seattle Distribution Center,Distribution Center,21600 84th Ave S,Kent,Wash.,98032,270000,Owned,Tenant/Owner,,,Active,KSEA,2025-01-15
+DC-PHX,105,Phoenix Distribution Center,Distribution Center,4800 W Buckeye Road,Phoenix,AZ,85043,285000,Leased,Tenant/Owner,,,Active,KPHX,2022-03-01
+SO-BOS,300,Boston Sales Office,Sales Office,"75 State Street, Suite 1400",Boston,MA,2110,"6,500",Leased (gross lease),Landlord (included in rent),,,Active,KBOS,2025-01-15
+DC-KCK,113,Kansas City Distribution Center,Distribution Center,1500 Fairfax Trafficway,Kansas City,KS,66106,230000,Leased,Tenant/Owner,,,Active,KMCI,2025-01-15
+DC-PHX,105,Phoenix Distribution Center,Distribution Center,4800 W Buckeye Road,Phoenix,AZ,85043,300000,Leased,Tenant/Owner,,,Active,KPHX,2025-01-15
+HQ-DEN,100,Corporate Headquarters,Office,1650 Larimer Street,Denver,CO,80202,"85,000",Leased,Tenant/Owner,,,Active,KDEN,2025-01-15
+DC-MSP,108,Minneapolis Distribution Center,Distribution Center,3100 Lone Oak Parkway,Eagan,MN,55121,260000,Leased,Tenant/Owner,,,Active,KMSP,2025-01-15
+DC-ATL,103,Atlanta Distribution Center,Distribution Center,4400 Fulton Industrial Blvd SW,Atlanta,ga,30336,"380,000",Owned,Tenant/Owner,,,Active,KATL,2025-01-15
+DC-ORL,110,Orlando Distribution Center,Distribution Center,9900 Boggy Creek Road,Orlando,FL,32824,240000,Leased,Tenant/Owner,,,Active,KMCO,2025-01-15
