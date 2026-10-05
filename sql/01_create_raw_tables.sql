@@ -278,3 +278,33 @@ CREATE TABLE raw_valley_mud_annual_usage_statement_2025 (
 	"Nov-2025" TEXT,
 	"Dec-2025" TEXT
 );
+
+DROP TABLE IF EXISTS raw_activity_2024_clean;
+CREATE TABLE raw_activity_2024_clean (
+	facility_code TEXT,
+	month TEXT,
+	scope TEXT,
+	source_category TEXT,
+	activity_type TEXT,
+	quantity TEXT,
+	unit TEXT,
+	vehicle_class TEXT,
+	model_year TEXT,
+	miles TEXT,
+	refrigerant TEXT
+);
+
+DROP TABLE IF EXISTS raw_inventory_2024_results;
+CREATE TABLE raw_inventory_2024_results (
+	facility_code TEXT,
+	scope TEXT,
+	source_category TEXT,
+	activity_type TEXT,
+	co2_t TEXT,
+	ch4_t TEXT,
+	n2o_t TEXT,
+	hfc_co2e_t TEXT,
+	location_based_tco2e TEXT,
+	market_based_tco2e TEXT,
+	memo_hcfc_co2e_t TEXT
+);

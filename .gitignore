@@ -14,6 +14,9 @@ data/answer_key/
 .dbeaver/
 .project
 .settings/
+Bookmarks/
+Dashboards/
+Diagrams/
 
 # Operating system clutter
 .DS_Store
