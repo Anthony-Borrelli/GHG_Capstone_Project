@@ -1,3 +1,6 @@
+-- WARNING: running this script drops and recreates every raw table (all imported data is deleted).
+-- Rerun the imports afterwards (see docs/loading_raw_data.md).
+
 DROP TABLE IF EXISTS raw_company_financials;
 CREATE TABLE raw_company_financials (
 	fiscal_year TEXT,
