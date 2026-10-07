@@ -38,7 +38,7 @@
 - **Dates:** YYYY-MM-DD
 - **Links to:** utility_account_map
 - **Issues noticed:** column names not snake_case, 
-- **Initial analysis:** 7 unique locations out of 19 from facility_register. will need to ensure other locations electricity is covered by other bills. Dallas and Chicago have 2 different meters. Dallas is because of their doc replacement in April.
+- **Initial analysis:** 6 unique locations out of 19 from facility_register. will need to ensure other locations electricity is covered by other bills. Dallas and Chicago have 2 different meters. Dallas is because of their doc replacement in April.
 
 ## raw_facility_register
 - **Source:** Accounting
@@ -48,7 +48,7 @@
 - **Quantities and units:** sqft as INT
 - **Dates:** date()
 - **Links to:** primary key
-- **Issues noticed:** DC-PHX duplicate, state formatting UPPER WASH., TEXAS, zip not 5 digits lost leading 0, sqft replace , with " ", uniform both dates to date() format.
+- **Issues noticed:** DC-PHX duplicate, state formatting UPPER WASH., TEXAS, zip not 5 digits lost leading 0, sqft replace , with nothing, uniform both dates to date() format.
 - **Initial analysis:** none
 
 ## raw_fuel_card_assignments
@@ -56,18 +56,18 @@
 - **Grain:** each row represents the active card in use from the date it was assigned to the date it was closed
 - **Rows:** 242, 236 unique card numbers
 - **Key columns:** card_number
-- **Quantities and units:** card and unit number AS INT
+- **Quantities and units:** 
 - **Dates:** date() format
 - **Links to:** fuel_card_transactions, vehicle_register, 
 - **Issues noticed:** none
-- **Initial analysis:** card_number and unit_number are not always the same across time. once cards get closed they get assigned a new unit number. this means only active cards should be looked at similar to facility_register to know which card in current with which unit number. ex. Unit 4228 & 4229 swap based on timing closed and reopened.
+- **Initial analysis:** card_number and unit_number are not always the same across time. once cards get closed they get assigned a new unit number.
 
 ## raw_fuel_card_transasctions_2025
 - **Source:** finance
 - **Grain:** each row represents a card transaction by date and time
 - **Rows:**
 - **Key columns:** transaction ID, card number, unit number, 
-- **Quantities and units:** quantity, unit price, gross amount AS REAL. transaction ID, card number, unit number odometer AS INT
+- **Quantities and units:** quantity, unit price, gross amount AS REAL. odometer AS INT
 - **Dates:** date() format, time is seperate.
 - **Links to:** fuel_card_assignments, vehicle_register
 - **Issues noticed:** columns to snake_case, 
@@ -78,7 +78,7 @@
 - **Grain:** each row represents monthly employee expense reports by date. ID's submit multiple reports
 - **Rows:** 
 - **Key columns:** employee ID, leased vehicle unit
-- **Quantities and units:** Leased vehicle unit as INT, business miles claimed as INT, reimbursement rate as INT
+- **Quantities and units:** Leased vehicle unit as INT, business miles claimed as INT, reimbursement rate as REAL
 - **Dates:** YYYY-MM
 - **Links to:** vehicle_register
 - **Issues noticed:** snake_case columns, date format
@@ -89,10 +89,10 @@
 - **Grain:** each row represents a monthly utility bill. same ID multiple times.
 - **Rows:**
 - **Key columns:** customer #, Premise
-- **Quantities and units:** customer # as INT, prev read curr read therm mult amount as REAL
+- **Quantities and units:** prev read curr read therm mult amount as REAL
 - **Dates:** MM-DD-YYYY, need to reformat
 - **Links to:** facility_register
-- **Issues noticed:** snake_case columns, date format, Premise will need to be substr'd to seperate address from facility_register.
+- **Issues noticed:** snake_case columns, date format
 - **Initial analysis:** facility id to be joined from other tables
 
 ## raw_midwest_gas_marketing_supply_invoices_chicago
@@ -111,7 +111,7 @@
 - **Grain:** each row represents site information for a given period, output/headcount/hours. multiple rows per site #
 - **Rows:**
 - **Key columns:** Site # as facility_id
-- **Quantities and units:** site # as INT, cases/pallet/headcount/hours AS REAL
+- **Quantities and units:** cases/pallet/headcount/hours AS REAL
 - **Dates:** YYYY-MM
 - **Links to:** facility_id
 - **Issues noticed:** snake_case columns, date format, 
@@ -193,7 +193,7 @@
 - **Dates:** YYYY-MM
 - **Links to:** vehicle_register
 - **Issues noticed:** none
-- **Initial analysis:** 10 units are not reporting 12 months of data
+- **Initial analysis:**
 
 ## raw_utility_account_map
 - **Source:** 
@@ -211,10 +211,10 @@
 - **Grain:** each row represents a monthly utility bill for each location, multiple rows for each location
 - **Rows:**
 - **Key columns:** account number, 
-- **Quantities and units:** usage, current charges AS REAL, invoice number as INT
+- **Quantities and units:** usage, current charges AS REAL
 - **Dates:** MM-DD-YYYY, need to reformat
 - **Links to:** facility_register, utility_account_map
-- **Issues noticed:** address will need to substr, snake_case columns, dates
+- **Issues noticed:** snake_case columns, dates
 - **Initial analysis:** conversion needed for UOM
 
 ## raw_valley_mud_annual_usage_statement_2025
@@ -234,7 +234,7 @@
 - **Rows:**
 - **Key columns:** unit_number, home_facility_id, fuel_card
 - **Quantities and units:**
-- **Dates:** YYYY-DD-MM, reformat
+- **Dates:** YYYY-MM-DD, reformat
 - **Links to:** facility_register, fuel_card_assignment, fuel_card_transactions
 - **Issues noticed:** dates
 - **Initial analysis:**
