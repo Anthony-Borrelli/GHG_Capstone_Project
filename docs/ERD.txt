@@ -1,0 +1,370 @@
+
+Table "financial" {
+  "fiscal_year" INT [pk]
+  "net_revenue_usd_millions" REAL
+  "employees_fte" REAL
+}
+
+Table "operation_kpi" {
+  "facility_id" TEXT [note: 'convert from site_number to facility_id']
+  "period" TEXT
+  "cases_shipped" INT
+  "avg_pallet_positions_used" INT
+  "headcount" INT
+  "operating_hours" INT
+  indexes {
+    (facility_id, period) [pk]
+  }
+}
+
+Ref: operation_kpi.facility_id > facility.facility_id
+
+Table "weather_degree_days" {
+  "weather_station" TEXT [not null]
+  "month" TEXT [not null]
+  "hdd_65f" REAL
+  "cdd_65f" REAL
+  indexes {
+    (weather_station, month) [pk]
+  }
+}
+
+Table "weather_station" {
+  "station_id" TEXT [pk]
+  "city"       TEXT
+  "state"      TEXT
+}
+
+Ref: facility.weather_station > weather_station.station_id
+Ref: weather_degree_days.weather_station > weather_station.station_id
+
+Table "facility" {
+  "facility_id" TEXT [pk]
+  "site_number" TEXT [unique]
+  "facility_name" TEXT
+  "facility_type" TEXT
+  "street" TEXT
+  "city" TEXT
+  "state" TEXT [not null]
+  "zip" TEXT [not null]
+  "sqft" REAL
+  "ownership" TEXT
+  "utilities_paid_by" TEXT
+  "acquisition_date" TEXT
+  "lease_end_date" TEXT
+  "status" TEXT
+  "weather_station" TEXT [not null]
+  "egrid_subregion" TEXT
+  "record_updated" TEXT
+}
+
+Table "fuel_card_assignment" {
+  "card_number" TEXT [not null, note: 'unit resolved via fuel_card_assignment where transaction_date is between assigned_from and assigned_to']
+  "unit_number" TEXT [not null]
+  "assigned_from" TEXT
+  "assigned_to" text
+  indexes {
+    (card_number, assigned_from) [pk]
+  }
+}
+
+Ref: fuel_card_assignment.unit_number > vehicle.unit_number
+
+Table "fuel_card_transaction" {
+  "transaction_id" TEXT [pk]
+  "card_number" TEXT [not null]
+  "unit_number" TEXT [not null]
+  "transaction_date" TEXT
+  "transaction_time" TEXT
+  "post_date" TEXT
+  "merchant_name" TEXT
+  "merchant_city" TEXT
+  "merchant_state" TEXT
+  "product_description" TEXT
+  "quantity" REAL
+  "uom" TEXT
+  "unit_price_usd" REAL
+  "gross_amount" REAL
+  "odometer" INT
+}
+
+Ref: fuel_card_transaction.unit_number > vehicle.unit_number
+
+Table "mileage_claim" {
+  "employee_id" TEXT
+  "unit_number" TEXT [not null]
+  "month" TEXT
+  "miles" REAL
+  "rate_per_mile" REAL
+  indexes {
+    (unit_number, month) [pk]
+  }
+}
+
+Ref: mileage_claim.unit_number > vehicle.unit_number
+
+Table "telematics_mileage" {
+  "unit_number" TEXT [not null]
+  "month" TEXT
+  "miles" REAL
+  indexes {
+    (unit_number, month) [pk]
+  }
+}
+
+Ref: telematics_mileage.unit_number > vehicle.unit_number
+
+Table "vehicle" {
+  "unit_number" TEXT [pk]
+  "vin" TEXT
+  "vehicle_class" TEXT
+  "fuel_type" TEXT
+  "model_year" INT
+  "facility_id" TEXT [not null]
+  "ownership" TEXT
+  "in_service_date" TEXT
+  "out_of_service_date" TEXT
+  "current_card_number" TEXT
+  "telematics" TEXT
+  "rated_mpg" REAL
+}
+
+Ref: vehicle.facility_id > facility.facility_id
+
+Table "rec_retirement" {
+  "batch_id" TEXT [pk]
+  "tracking_system" TEXT
+  "resource_type" TEXT
+  "generation_location" TEXT
+  "vintage_year" INT
+  "mwh" REAL
+  "retirement_date" TEXT
+  "facility_id" TEXT [not null]
+  "certification" TEXT
+}
+
+Ref: rec_retirement.facility_id > facility.facility_id
+
+Table "supplier_emission_rate" {
+  "utility_name" TEXT [note: 'Joined to utility_map on utility_name (names repeat in utility_map, so no FK)']
+  "product" TEXT
+  "year" INT
+  "co2_lb_per_mwh" REAL
+  "source_note" TEXT
+  indexes {
+    (utility_name, product, year) [pk]
+  }
+}
+
+Table "arcticair_log" {
+  "work_order" TEXT [pk]
+  "service_date" TEXT
+  "equipment_id" TEXT [not null]
+  "location" TEXT
+  "job_type" TEXT
+  "refrigerant" TEXT
+  "qty_charged" REAL
+  "qty_recovered" REAL
+  "uom" TEXT
+  "tech_comments" TEXT
+}
+
+Ref: arcticair_log.equipment_id > refrigeration_equipment.equipment_id
+
+Table "polar_log" {
+  "work_order" TEXT [pk]
+  "service_date" TEXT
+  "equipment_id" TEXT [not null]
+  "facility_id" TEXT [not null]
+  "service_type" TEXT
+  "refrigerant" TEXT
+  "qty_charged_lbs" REAL
+  "qty_recovered_lbs" REAL
+  "tech_comments" TEXT
+}
+
+Ref: polar_log.equipment_id > refrigeration_equipment.equipment_id
+Ref: polar_log.facility_id > facility.facility_id
+
+Table "refrigeration_equipment" {
+  "equipment_id" TEXT [pk]
+  "facility_id" TEXT [not null]
+  "equipment_type" TEXT
+  "refrigerant" TEXT
+  "full_charge_lbs" REAL
+  "install_year" INT
+  "status" TEXT
+  "retired_date" TEXT
+}
+
+Ref: refrigeration_equipment.facility_id > facility.facility_id
+
+Table "generator_log" {
+  "facility_id" TEXT [not null]
+  "entry_date" TEXT [not null]
+  "entry_type" TEXT
+  "reading" REAL
+  "unit" TEXT
+  "tank_capacity_gal" REAL
+  indexes {
+    (facility_id, entry_date, entry_type) [pk]
+  }
+}
+
+Ref: generator_log.facility_id > facility.facility_id
+
+Table "propane_delivery" {
+  "facility_id" TEXT [not null]
+  "delivery_date" TEXT [not null]
+  "vendor" TEXT
+  "product" TEXT
+  "quantity" REAL
+  "uom" TEXT
+  indexes {
+    (facility_id, delivery_date) [pk]
+  }
+}
+
+Ref: propane_delivery.facility_id > facility.facility_id
+
+Table "energyhub_consumption" {
+  "site" TEXT 
+  "account_number" TEXT [not null]
+  "utility" TEXT
+  "meter_number" TEXT [not null]
+  "start_date" TEXT
+  "end_date" TEXT
+  "consumption" REAL
+  "uom" TEXT
+  "cost_usd" REAL
+  "est" TEXT
+  indexes {
+    (meter_number, start_date) [pk]
+  }
+}
+
+Ref: energyhub_consumption.account_number > utility_map.account_number
+
+Table "mesa_gas_bill" {
+  "account_number" TEXT [not null]
+  "address" TEXT
+  "prev_read_date" TEXT
+  "curr_read_date" TEXT
+  "prev_read_ccf" REAL
+  "curr_read_ccf" REAL
+  "therm_multiplier" REAL
+  "amount_due" REAL
+  indexes {
+    (account_number, curr_read_date) [pk]
+  }
+}
+
+Ref: mesa_gas_bill.account_number > utility_map.account_number
+
+Table "chi_midwest_invoice" {
+  "facility_id" TEXT
+  "month" TEXT
+  "customer" TEXT
+  "pipeline_pool" TEXT
+  "nominated_volume_dth" REAL
+  "price_per_dth" REAL
+  indexes {
+    (facility_id, month) [pk]
+  }
+}
+
+Table "slc_utility_bill" {
+  "customer" TEXT
+  "account_number" TEXT [not null]
+  "commodity" TEXT
+  "start_date" TEXT [not null]
+  "end_date" TEXT
+  "usage" REAL
+  "uom" TEXT
+  indexes {
+    (account_number, start_date) [pk]
+  }
+}
+
+Ref: slc_utility_bill.account_number > utility_map.account_number
+
+Table "utility_map" {
+  "facility_id" TEXT [not null]
+  "utility_name" TEXT
+  "commodity" TEXT
+  "account_number" TEXT [pk]
+  "meter_number" TEXT [unique]
+  "notes" TEXT
+}
+
+Ref: utility_map.facility_id > facility.facility_id
+
+Table "utilitypay_bill" {
+  "vendor_name" TEXT
+  "account_number" TEXT [not null]
+  "address" TEXT
+  "commodity" TEXT
+  "bill_date" TEXT
+  "service_start_date" TEXT
+  "service_end_date" TEXT
+  "usage" REAL
+  "uom" TEXT
+  "read_type" TEXT
+  "bill_status" TEXT
+  "current_charges" REAL
+  "invoice_number" TEXT [pk]
+}
+
+Ref: utilitypay_bill.account_number > utility_map.account_number
+
+Table "valley_consumption" {
+  "account_number" TEXT [not null]
+  "meter_number" TEXT [not null]
+  "address" TEXT
+  "rate_schedule" TEXT
+  "renewable_choice_enrollment" REAL
+  "usage_month" TEXT
+  "consumption" REAL
+  indexes {
+    (meter_number, usage_month) [pk]
+  }
+}
+
+Ref: valley_consumption.account_number > utility_map.account_number
+Ref: valley_consumption.meter_number > utility_map.meter_number
+
+Table "base_year_activity" {
+  "activity_id" INT [pk]
+  "facility_id" TEXT [not null]
+  "month" TEXT
+  "scope" TEXT
+  "source_category" TEXT
+  "activity_type" TEXT
+  "quantity" REAL
+  "unit" TEXT
+  "vehicle_class" TEXT
+  "model_year" INT
+  "miles" REAL
+  "refrigerant" TEXT
+}
+
+Ref: base_year_activity.facility_id > facility.facility_id
+
+Table "base_year_inventory" {
+  "facility_id" TEXT [not null]
+  "scope" TEXT
+  "source_category" TEXT
+  "activity_type" TEXT
+  "co2_t" REAL
+  "ch4_t" REAL
+  "n2o_t" REAL
+  "hfc_co2e_t" REAL
+  "location_based_tco2e" REAL
+  "market_based_tco2e" REAL
+  "memo_hcfc_co2e_t" REAL
+  indexes {
+    (facility_id, activity_type) [pk]
+  }
+}
+
+Ref: base_year_inventory.facility_id > facility.facility_id
