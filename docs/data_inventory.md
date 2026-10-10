@@ -91,9 +91,9 @@
 - **Key columns:** customer #, Premise
 - **Quantities and units:** prev read curr read therm mult amount as REAL
 - **Dates:** MM-DD-YYYY, need to reformat
-- **Links to:** facility_register
+- **Links to:** utility map
 - **Issues noticed:** snake_case columns, date format
-- **Initial analysis:** facility id to be joined from other tables
+- **Initial analysis:** 
 
 ## raw_midwest_gas_marketing_supply_invoices_chicago
 - **Source:** finance

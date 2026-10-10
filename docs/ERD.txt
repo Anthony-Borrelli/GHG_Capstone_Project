@@ -59,7 +59,7 @@ Table "facility" {
 }
 
 Table "fuel_card_assignment" {
-  "card_number" TEXT [not null, note: 'unit resolved via fuel_card_assignment where transaction_date is between assigned_from and assigned_to']
+  "card_number" TEXT [not null]
   "unit_number" TEXT [not null]
   "assigned_from" TEXT
   "assigned_to" text
@@ -72,7 +72,7 @@ Ref: fuel_card_assignment.unit_number > vehicle.unit_number
 
 Table "fuel_card_transaction" {
   "transaction_id" TEXT [pk]
-  "card_number" TEXT [not null]
+  "card_number" TEXT [not null, note: 'unit resolved via fuel_card_assignment where transaction_date is between assigned_from and assigned_to']
   "unit_number" TEXT [not null]
   "transaction_date" TEXT
   "transaction_time" TEXT
