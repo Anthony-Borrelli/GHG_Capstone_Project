@@ -1,6 +1,8 @@
 # Loading the Raw Data
 
-The raw layer of the database is rebuilt from scratch by one script. It creates every `raw_` table, then loads each CSV in `data/` exactly as received, with every column stored as TEXT. All type conversion and cleaning happens later, in the numbered scripts in `sql/`.
+The raw and reference layers of the database are rebuilt from scratch by one script. It creates every table, then loads each source CSV in `data/` exactly as received, with every column stored as TEXT, and loads the reference files in `data/reference/factors/`. All cleaning of the source data happens later, in the numbered scripts in `sql/`.
+
+> A rebuild also drops and recreates every clean table (it runs `sql/02_create_clean_tables.sql`, which is where the `ref_` tables live). Rerun the cleaning scripts in `sql/` afterwards.
 
 ## Before you start
 
@@ -24,11 +26,16 @@ That's it. The process is safe to repeat at any time: each run drops and recreat
 `rebuild_database.bat` moves to the repo root and runs `load/load_raw_data.sql` with sqlite3. That file:
 
 1. Turns on `.bail on`, so the run stops at the first error instead of continuing with incomplete data.
-2. Runs `sql/01_create_raw_tables.sql`, which drops and recreates every `raw_` table, empty and all TEXT.
-3. Loads each CSV into its table with `.import --csv --skip 1`. The `--skip 1` skips the header row, because the tables already have their column names.
-4. Prints the row count of every table.
+2. Runs `sql/01a_create_raw_tables.sql`, which drops and recreates every `raw_` table for the source data, empty and all TEXT.
+3. Runs `sql/01b_create_raw_ref_tables.sql`, which drops and recreates the raw reference tables, empty and all TEXT.
+4. Runs `sql/02_create_clean_tables.sql`, which drops and recreates every clean table, including the typed `ref_` tables.
+5. Loads each source CSV into its `raw_` table with `.import --csv --skip 1`. The `--skip 1` skips the header row, because the tables already have their column names.
+6. Loads the reference files:
+   - Files that still need cleaning (`power_profiler_zipcode_tool.csv`, `green_e_residual_mix_emission_rates_2025.csv`) go into raw reference tables. A later script cleans them into `ref_zip_egrid` and `ref_residual_mix`.
+   - Files that are already clean (`ref_*.csv`) go straight into the `ref_` table with the same name. Their numbers convert to REAL on import.
+7. Prints the row count of every table.
 
-Each table is named `raw_` plus the CSV file name, for example `facility_register.csv` loads into `raw_facility_register`.
+Each raw table is named `raw_` plus the CSV file name, for example `facility_register.csv` loads into `raw_facility_register`. Each clean reference file is named after its table, for example `ref_gwp.csv` loads into `ref_gwp`.
 
 > `load/load_raw_data.sql` contains sqlite3 commands (the lines starting with a dot), so it only runs with the sqlite3 command-line tool, not in a database editor. Every file in `sql/` is plain SQLite SQL and runs in any SQLite tool.
 
@@ -69,6 +76,16 @@ Loading through sqlite3 also keeps every value exactly as it appears in the file
 | raw_valley_mud_annual_usage_statement_2025 | 1 |
 | raw_activity_2024_clean | 732 |
 | raw_inventory_2024_results | 121 |
+| raw_power_profiler_zipcode_tool | 41,588 |
+| raw_green_e_residual_mix_emission_rates_2025 | 27 |
+| ref_gwp | 9 |
+| ref_stationary_factor | 2 |
+| ref_mobile_co2 | 3 |
+| ref_mobile_ch4_n2o_onroad | 18 |
+| ref_mobile_ch4_n2o_nonroad | 2 |
+| ref_egrid_rate | 27 |
+| ref_building_intensity | 1 |
+| ref_unit_conversion | 13 |
 
 ## Troubleshooting
 
@@ -77,11 +94,12 @@ Loading through sqlite3 also keeps every value exactly as it appears in the file
 | `is not recognized` / `cannot find the path` | The `SQLITE` path in the batch file is wrong | Copy the path again (Shift + right-click `sqlite3.exe`, Copy as path) |
 | `database is locked` | Another program has the database open | Close any database tool using the file and run again |
 | `cannot open "data/..."` | A file was moved or renamed | Check the path on that `.import` line matches the file |
-| `no such table` | A table name in `load_raw_data.sql` doesn't match `01_create_raw_tables.sql` | Make the two names match |
+| `no such table` | A table name in `load_raw_data.sql` doesn't match its `CREATE TABLE` script | Make the two names match |
+| `expected N columns but found M` | A CSV's columns don't match its table | Compare the CSV header with the `CREATE TABLE` columns |
 | A row count differs from the table above | The source file changed, or the wrong number of lines was skipped | Open the CSV in a text editor and compare |
 
 ## Adding a new file
 
-1. Add a `CREATE TABLE` for it (all columns TEXT) to `sql/01_create_raw_tables.sql`.
+1. Add a `CREATE TABLE` for it (all columns TEXT) to `sql/01a_create_raw_tables.sql`, or to `sql/01b_create_raw_ref_tables.sql` for a reference file that needs cleaning. A reference file that is already clean needs no raw table: name it after its `ref_` table and import it straight into that.
 2. Add an `.import` line for it to `load/load_raw_data.sql`, and add it to the row count query at the bottom.
 3. Run `rebuild_database.bat` and add the new table's row count to the table above.
