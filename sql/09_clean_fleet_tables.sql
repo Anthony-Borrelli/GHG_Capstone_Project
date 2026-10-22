@@ -1,15 +1,14 @@
 -- Clear table before inserting
 
-DELETE FROM vehicle;
-DELETE FROM fuel_card_assignment;
-DELETE FROM fuel_card_transaction;
-DELETE FROM mileage_claim;
 DELETE FROM telematics_mileage;
+DELETE FROM mileage_claim;
+DELETE FROM fuel_card_transaction;
+DELETE FROM fuel_card_assignment;
+DELETE FROM vehicle;
 
 -- ===========================================================================
 -- Insert data and logic
 -- ===========================================================================
-
 INSERT INTO vehicle (unit_number, vin, vehicle_class, fuel_type, model_year, facility_id, ownership, in_service_date, out_of_service_date, current_card_number, telematics, rated_mpg)
 SELECT
 	rvr.unit_number,
@@ -36,9 +35,9 @@ FROM raw_fuel_card_assignments rfca;
 
 INSERT INTO fuel_card_transaction (transaction_id, card_number, unit_number, transaction_date, transaction_time, post_date, merchant_name, merchant_city, merchant_state, product_description, quantity, uom, unit_price_usd, gross_amount, odometer)
 SELECT
-	DISTINCT rfct."Transaction ID",
+	DISTINCT rfct."Transaction ID", -- Duplicate transactions found & verified, distinct to remove.
 	rfct."Card Number",
-	-- ADD in fix
+	rfca.unit_number,
 	rfct."Transaction Date",
 	rfct."Transaction Time",
 	rfct."Post Date",
@@ -50,30 +49,13 @@ SELECT
 	rfct."Unit of Measure",
 	rfct."Unit Price",
 	rfct."Gross Amount",
-	rfct.Odometer
+	CAST(NULLIF(rfct.Odometer, '') AS INTEGER)
 FROM raw_fuel_card_transactions_2025 rfct
-LEFT JOIN raw_fuel_card_assignments rfca
+LEFT JOIN raw_fuel_card_assignments rfca 
 	ON rfct."Card Number" = rfca.card_number
-WHERE rfct."Transaction Date" >= rfca.assigned_from AND rfct."Transaction Date" <= rfca.assigned_to 
-;
-
--- [TEMPORARY] Testing start, DELETE AFTER DONE TESTING --------------------------------------
-
-	SELECT COUNT(*)
-	FROM (
-		SELECT *
-		FROM raw_fuel_card_transactions_2025 rfct
-		LEFT JOIN raw_fuel_card_assignments rfca 
-		ON rfct."Card Number" = rfca.card_number
-		AND rfct."Transaction Date" >= rfca.assigned_from 
-		AND (rfca.assigned_to = '' OR rfct."Transaction Date" < rfca.assigned_to)
-		WHERE rfca.card_number IS NULL
-	);
-	
-
-
-
--- Testing end -------------------------------------------------------------------------------
+	AND rfct."Transaction Date" >= rfca.assigned_from 
+	AND (rfca.assigned_to = '' OR rfct."Transaction Date" <= rfca.assigned_to)
+WHERE rfct."Transaction Date" >= '2025-01-01'; -- Transaction dates and post date covering the year change. Only transactions in 2025, not post dates.
 
 INSERT INTO mileage_claim (employee_id, unit_number, month, miles, rate_per_mile)
 SELECT

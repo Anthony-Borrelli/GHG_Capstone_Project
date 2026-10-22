@@ -1,0 +1,2 @@
+building_type,kwh_per_sqft,mmbtu_per_sqft,source
+Sales Office,13.6,0.021854,"EIA CBECS 2018, principal building activity = Office. Electricity: Table C14, 13.6 kWh per sq ft. Natural gas: Table C24, 21.3 cubic feet per sq ft x 1.026 MMBtu per Mcf (EPA Hub Table 1) / 1,000"

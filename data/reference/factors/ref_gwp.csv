@@ -1,0 +1,10 @@
+gas,gwp,is_scope1_included,source
+CO2,1,1,EPA GHG Emission Factors Hub 2025 Table 11 (IPCC AR5)
+CH4,28,1,EPA GHG Emission Factors Hub 2025 Table 11 (IPCC AR5)
+N2O,265,1,EPA GHG Emission Factors Hub 2025 Table 11 (IPCC AR5)
+R-404A,3943,1,"EPA GHG Emission Factors Hub 2025 Table 12 (IPCC AR5, blend)"
+R-407C,1624,1,"EPA GHG Emission Factors Hub 2025 Table 12 (IPCC AR5, blend)"
+R-410A,1924,1,"EPA GHG Emission Factors Hub 2025 Table 12 (IPCC AR5, blend)"
+R-134a,1300,1,"EPA GHG Emission Factors Hub 2025 Table 11, HFC-134a (IPCC AR5)"
+R-448A,1273,1,"Not in Hub Table 12. Calculated with the Hub method: 26% HFC-32, 26% HFC-125, 21% HFC-134a (Table 11 GWPs); HFO-1234yf/ze count as 0 (EPA SNAP blend composition)"
+R-22,1760,0,"IPCC AR5 Table 8.A.1, HCFC-22. Montreal Protocol gas: memo item only, not in Scope 1"

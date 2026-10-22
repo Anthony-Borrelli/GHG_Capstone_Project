@@ -5,7 +5,6 @@ DELETE FROM ref_residual_mix;
 -- ===========================================================================
 -- Insert data and logic
 -- ===========================================================================
-
 INSERT INTO ref_residual_mix (egrid_subregion, data_year, co2_lb_per_mwh, source)
 SELECT
 	rgermer."eGrid Subregion",

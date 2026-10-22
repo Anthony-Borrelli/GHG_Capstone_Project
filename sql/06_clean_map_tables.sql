@@ -9,42 +9,19 @@ DELETE FROM map_calendar_day;
 -- ===========================================================================
 -- Insert data and logic
 -- ===========================================================================
-
-INSERT INTO map_weather_station (weather_station_id, city, state)
+INSERT INTO map_calendar_day (calendar_date, month, year)
+WITH RECURSIVE calendar(calendar_date) AS (
+	SELECT '2025-01-01'
+	UNION ALL
+	SELECT date(calendar_date, '+1 day')
+	FROM calendar
+	WHERE calendar_date < '2025-12-31'
+)
 SELECT
-	DISTINCT rwdd.station_id,
-	rwdd.city ,
-	rwdd.state 
-FROM raw_weather_degree_days_2024_2025 rwdd;
-
-INSERT INTO map_activity_type (activity_type, fuel_type, scope, source_category)
-SELECT
-	DISTINCT activity_type,
-	CASE activity_type
-		WHEN 'natural_gas' 		THEN 'natural_gas'
-		WHEN 'diesel_generator' THEN 'distillate_fuel_oil_no2'
-		WHEN 'propane_forklift' THEN 'lpg'
-		WHEN 'diesel_onroad' 	THEN 'diesel'
-		WHEN 'gasoline_onroad' 	THEN 'gasoline'
-		WHEN 'diesel_tru' 		THEN 'diesel'
-		ELSE activity_type
-	END,
-	rac.scope,
-	rac.source_category 
-FROM raw_activity_2024_clean rac
-WHERE scope IN ('Scope 1', 'Scope 2'); -- Excludes the R-22 memo rows, R-22 is handled by ref_gwp.is_scope1_included
-
-INSERT INTO map_vehicle_class (vehicle_class, hub_vehicle_category, fuel_type)
-SELECT
-	DISTINCT vehicle_class,
-	CASE vehicle_class
-		WHEN 'Sales Car' 		THEN 'Gasoline Passenger Cars'
-		WHEN 'Class 8 Tractor' 	THEN 'Medium- and Heavy-Duty Vehicles'
-		WHEN 'Box Truck' 		THEN 'Medium- and Heavy-Duty Vehicles'
-		WHEN 'Cargo Van' 		THEN 'Gasoline Light-Duty Trucks'
-	END,
-	LOWER(rvr.fuel_type)
-FROM raw_vehicle_register rvr;
+	calendar_date,
+	SUBSTR(calendar_date, 1, 7),
+	SUBSTR(calendar_date, 1, 4)
+FROM calendar;
 
 INSERT INTO map_fuel_product (product_description, activity_type)
 SELECT
@@ -72,17 +49,40 @@ SELECT
 	END
 FROM raw_fuel_card_transactions_2025 rfct;
 
-INSERT INTO map_calendar_day (calendar_date, month, year)
-WITH RECURSIVE calendar(calendar_date) AS (
-	SELECT '2025-01-01'
-	UNION ALL
-	SELECT date(calendar_date, '+1 day')
-	FROM calendar
-	WHERE calendar_date < '2025-12-31'
-)
+INSERT INTO map_vehicle_class (vehicle_class, hub_vehicle_category, fuel_type)
 SELECT
-	calendar_date,
-	SUBSTR(calendar_date, 1, 7),
-	SUBSTR(calendar_date, 1, 4)
-FROM calendar;
+	DISTINCT vehicle_class,
+	CASE vehicle_class
+		WHEN 'Sales Car' 		THEN 'Gasoline Passenger Cars'
+		WHEN 'Class 8 Tractor' 	THEN 'Medium- and Heavy-Duty Vehicles'
+		WHEN 'Box Truck' 		THEN 'Medium- and Heavy-Duty Vehicles'
+		WHEN 'Cargo Van' 		THEN 'Gasoline Light-Duty Trucks'
+	END,
+	LOWER(rvr.fuel_type)
+FROM raw_vehicle_register rvr;
+
+INSERT INTO map_activity_type (activity_type, fuel_type, scope, source_category)
+SELECT
+	DISTINCT activity_type,
+	CASE activity_type
+		WHEN 'natural_gas' 		THEN 'natural_gas'
+		WHEN 'diesel_generator' THEN 'distillate_fuel_oil_no2'
+		WHEN 'propane_forklift' THEN 'lpg'
+		WHEN 'diesel_onroad' 	THEN 'diesel'
+		WHEN 'gasoline_onroad' 	THEN 'gasoline'
+		WHEN 'diesel_tru' 		THEN 'diesel'
+		ELSE activity_type
+	END,
+	rac.scope,
+	rac.source_category 
+FROM raw_activity_2024_clean rac
+WHERE scope IN ('Scope 1', 'Scope 2'); -- Excludes the R-22 memo rows, R-22 is handled by ref_gwp.is_scope1_included
+
+INSERT INTO map_weather_station (weather_station_id, city, state)
+SELECT
+	DISTINCT rwdd.station_id,
+	rwdd.city ,
+	rwdd.state 
+FROM raw_weather_degree_days_2024_2025 rwdd;
+
 	

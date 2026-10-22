@@ -6,7 +6,6 @@ DELETE FROM facility;
 -- Create CTE and insert data with logic
 -- Selects the latest facility_id record based on the record_updated column (PHX duplicate)
 -- ===========================================================================
-
 WITH ranked_facility AS (
 SELECT *,
 ROW_NUMBER() OVER (PARTITION BY facility_id ORDER BY record_updated DESC) AS rn
@@ -27,7 +26,7 @@ ownership, utilities_paid_by, acquisition_date, lease_end_date, status, weather_
 			WHEN 'WASH.' THEN 'WA'
 			ELSE UPPER(state)
 		END,
-		printf('%05d',rf.zip), 											-- SQLite specific, returns 5 digits with leading 0
+		printf('%05d',rf.zip), 													-- SQLite specific, returns 5 digits with leading 0
 		CAST(REPLACE(sqft, ',', '') AS INTEGER),
 		ownership,
 		utilities_paid_by,

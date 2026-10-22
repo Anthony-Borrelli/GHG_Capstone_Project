@@ -1,0 +1,14 @@
+from_unit,to_unit,factor,source
+therm,MMBtu,0.1,"Definition: 1 therm = 100,000 Btu"
+Dth,MMBtu,1,Definition: 1 dekatherm = 1 MMBtu
+Mcf,MMBtu,1.026,"EPA GHG Emission Factors Hub 2025 Table 1, natural gas heat content (0.001026 mmBtu per scf)"
+CCF,Mcf,0.1,Definition: 100 cubic feet = 0.1 Mcf
+kWh,MWh,0.001,Definition
+MWh,kWh,1000,Definition
+kg,lb,2.20462262,Definition: 1 lb = 0.45359237 kg (exact)
+lb,kg,0.45359237,Definition: 1 lb = 0.45359237 kg (exact)
+lb_propane,gal,0.235849,Propane density 4.24 lb per gal (docs/methodology_rules.md)
+cylinder_33_5lb,gal,7.9009,One 33.5 lb forklift cylinder / 4.24 lb per gal (docs/methodology_rules.md)
+g,kg,0.001,Definition
+kg,metric_ton,0.001,Definition
+lb,metric_ton,0.00045359237,Definition: 1 lb = 0.45359237 kg (exact)

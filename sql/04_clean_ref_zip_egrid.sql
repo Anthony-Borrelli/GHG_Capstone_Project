@@ -5,7 +5,6 @@ DELETE FROM ref_zip_egrid;
 -- ===========================================================================
 -- Insert data and logic
 -- ===========================================================================
-
 INSERT INTO ref_zip_egrid (zip, egrid_subregion, multiple_subregion_flag)
 SELECT
 	rppzt.zip,

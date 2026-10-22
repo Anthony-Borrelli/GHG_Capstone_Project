@@ -1,0 +1,4 @@
+fuel_type,co2_kg_per_gal,source
+diesel,10.21,"EPA GHG Emission Factors Hub 2025 Table 2, Diesel Fuel"
+gasoline,8.78,"EPA GHG Emission Factors Hub 2025 Table 2, Motor Gasoline"
+lpg,5.68,"EPA GHG Emission Factors Hub 2025 Table 2, Liquefied Petroleum Gases (LPG)"
