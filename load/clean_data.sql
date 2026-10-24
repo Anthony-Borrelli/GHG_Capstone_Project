@@ -37,6 +37,10 @@ PRAGMA foreign_keys = ON;
 .read sql/13_clean_utilities.sql
 .print Running 14_clean_base_year.sql
 .read sql/14_clean_base_year.sql
+.print Running 15_merged_tables.sql
+.read sql/15_merged_tables.sql
+.print Running 16_activity_tables.sql
+.read sql/16_activity_tables.sql
 
 .mode column
 .headers on
@@ -107,4 +111,10 @@ SELECT 'valley_consumption' AS table_name, COUNT(*) AS row_count FROM valley_con
 UNION ALL
 SELECT 'base_year_activity' AS table_name, COUNT(*) AS row_count FROM base_year_activity
 UNION ALL
-SELECT 'base_year_inventory' AS table_name, COUNT(*) AS row_count FROM base_year_inventory;
+SELECT 'base_year_inventory' AS table_name, COUNT(*) AS row_count FROM base_year_inventory
+UNION ALL
+SELECT 'refrigerant_service' AS table_name, COUNT(*) AS row_count FROM refrigerant_service
+UNION ALL
+SELECT 'utility_bill' AS table_name, COUNT(*) AS row_count FROM utility_bill
+UNION ALL
+SELECT 'fleet_activity' AS table_name, COUNT(*) AS row_count FROM fleet_activity;

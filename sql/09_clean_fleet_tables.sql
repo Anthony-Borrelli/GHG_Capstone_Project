@@ -46,7 +46,7 @@ SELECT
 	rfct."Merchant State",
 	rfct."Product Description",
 	rfct.Quantity,
-	rfct."Unit of Measure",
+	LOWER(rfct."Unit of Measure"),
 	rfct."Unit Price",
 	rfct."Gross Amount",
 	CAST(NULLIF(rfct.Odometer, '') AS INTEGER)

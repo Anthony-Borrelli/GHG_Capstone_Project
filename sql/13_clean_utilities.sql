@@ -129,7 +129,11 @@ SELECT
 		ELSE NULL
 	END,
 	rube."Usage",
-	rube.UOM,
+	CASE rube.UOM
+		WHEN 'MCF' 	  THEN 'Mcf'
+		WHEN 'Therms' THEN 'therm'
+		ELSE rube.UOM
+	END,
 	rube."Read Type",
 	rube."Bill Status",
 	rube."Current Charges"
