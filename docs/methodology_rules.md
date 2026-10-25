@@ -71,6 +71,13 @@ Simplified material balance, per service event. Emissions in lb, then x 0.453592
 
 Take each unit's refrigerant from the equipment inventory, not the contractor logs.
 
+## Estimated activity
+
+| Situation | Rule |
+| --- | --- |
+| Data provided by the client | Treated as actual data (`is_estimated = 0`), including bills the utility marked as estimated reads. |
+| Activity estimated after receiving the data (bill gap fill, SO-BOS CBECS estimate) | Flagged `is_estimated = 1` in `inventory_activity_data`, so the estimated share of the inventory can be reported. |
+
 ## Factors
 
 EPA GHG Emission Factors Hub 2025 (eGRID2023), Green-e 2025 Residual Mix, IPCC AR5 100-year GWPs (CH4 28, N2O 265). Apply the same factor set to 2024 and 2025 so the years are comparable.

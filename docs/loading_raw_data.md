@@ -142,6 +142,7 @@ Loading through sqlite3 also keeps every value exactly as it appears in the file
 | refrigerant_service | 327 | Polar (192) and ArcticAir (135) stacked; ArcticAir converted from kg to lb |
 | utility_bill | 491 | UtilityPay (344, cancelled bills removed), EnergyHub (93), Mesa (42), Valley (12); all in kWh or MMBtu |
 | fleet_activity | 4,556 | one row per vehicle, month and fuel type: fuel cards (4,496) with telematics miles on on-road rows, plus leased car mileage claims (60, gallons = miles / rated MPG). Propane forklifts have no unit number and load into inventory_activity_data instead |
+| inventory_activity_data | 5,206 | one table for every source: utilities (403, prorated by day, 2025 days only), fleet (4,556, one row per vehicle-month), propane (99), generators (14, annual rows with month NULL), refrigerants (134, by facility, month and gas; service events with no emissions dropped). All rows is_estimated = 0 |
 
 ## Troubleshooting
 

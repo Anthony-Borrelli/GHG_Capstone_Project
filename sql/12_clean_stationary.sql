@@ -11,8 +11,14 @@ SELECT
 	regfl.facility_id,
 	regfl.entry_date,
 	regfl.entry_type,
-	regfl.value,
-	regfl.unit,
+	CASE 
+		WHEN regfl.unit = '% full' THEN (regfl.value/100.0)*regfl.tank_capacity_gal
+		ELSE regfl.value
+	END,
+	CASE 
+		WHEN regfl.unit = '% full' THEN 'gal'
+		ELSE regfl.unit
+	END,
 	regfl.tank_capacity_gal
 FROM raw_emergency_generator_fuel_log_2025 regfl;
 

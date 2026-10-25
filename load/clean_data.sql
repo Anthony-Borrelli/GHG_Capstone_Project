@@ -117,4 +117,6 @@ SELECT 'refrigerant_service' AS table_name, COUNT(*) AS row_count FROM refrigera
 UNION ALL
 SELECT 'utility_bill' AS table_name, COUNT(*) AS row_count FROM utility_bill
 UNION ALL
-SELECT 'fleet_activity' AS table_name, COUNT(*) AS row_count FROM fleet_activity;
+SELECT 'fleet_activity' AS table_name, COUNT(*) AS row_count FROM fleet_activity
+UNION ALL
+SELECT 'inventory_activity_data' AS table_name, COUNT(*) AS row_count FROM inventory_activity_data;

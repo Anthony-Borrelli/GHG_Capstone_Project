@@ -546,6 +546,7 @@ CREATE TABLE inventory_activity_data (
     activity_type   TEXT    NOT NULL REFERENCES map_activity_type (activity_type),
     quantity        REAL    NOT NULL,
     uom             TEXT    NOT NULL,
+    is_estimated    INTEGER NOT NULL DEFAULT 0 CHECK (is_estimated IN (0, 1)),  -- 1 = estimated after receiving the data from the client (gap fill, CBECS), 0 = as provided by the client
     vehicle_class   TEXT,
     model_year      INTEGER,
     miles           REAL,
