@@ -4,7 +4,7 @@
 
 Capstone for the Coursera *SQL for Data Science* specialisation, by Anthony Borrelli. The company, Cobalt Creek Provisions (CCP), is fictional; the emission factors are real (US EPA, Green-e, IPCC).
 
-**[Open the interactive dashboard](https://anthony-borrelli.github.io/GHG_Capstone_Project/dashboard/)** · [Analysis queries](sql/20_analysis.sql) · [Data model](docs/ERD.md) · [Methodology](docs/methodology_rules.md)
+**[Dashboard preview below]** · [Analysis queries](sql/20_analysis.sql) · [Data model](docs/ERD.md) · [Methodology](docs/methodology_rules.md)
 
 [![Dashboard preview](dashboard/images/dashboard_preview.png)](https://anthony-borrelli.github.io/GHG_Capstone_Project/dashboard/)
 
