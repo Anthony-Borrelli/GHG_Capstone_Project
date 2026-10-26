@@ -179,8 +179,8 @@ SELECT
 	mat.activity_type,
 	SUM(CASE
 			WHEN gl.entry_type = 'Tank Reading' AND gl.entry_date = rd.first_reading_date   THEN gl.reading  -- starting tank reading
-			WHEN gl.entry_type = 'Tank Reading' AND gl.entry_date = rd.last_reading_date THEN -gl.reading -- ending tank reading, subtract from start
-			WHEN gl.entry_type = 'Delivery'												THEN gl.reading  -- fuel added
+			WHEN gl.entry_type = 'Tank Reading' AND gl.entry_date = rd.last_reading_date 	THEN -gl.reading -- ending tank reading, subtract from start
+			WHEN gl.entry_type = 'Delivery'													THEN gl.reading  -- fuel added
 			ELSE 0
 	END) AS quantity,
 	'gal' AS uom,

@@ -41,6 +41,12 @@ PRAGMA foreign_keys = ON;
 .read sql/15_merged_tables.sql
 .print Running 16_activity_tables.sql
 .read sql/16_activity_tables.sql
+.print Running 17_estimates_gap_filling.sql
+.read sql/17_estimates_gap_filling.sql
+.print Running 18_emissions_view.sql
+.read sql/18_emissions_view.sql
+.print Running 19_results_view.sql
+.read sql/19_results_view.sql
 
 .mode column
 .headers on
@@ -119,4 +125,12 @@ SELECT 'utility_bill' AS table_name, COUNT(*) AS row_count FROM utility_bill
 UNION ALL
 SELECT 'fleet_activity' AS table_name, COUNT(*) AS row_count FROM fleet_activity
 UNION ALL
-SELECT 'inventory_activity_data' AS table_name, COUNT(*) AS row_count FROM inventory_activity_data;
+SELECT 'inventory_activity_data' AS table_name, COUNT(*) AS row_count FROM inventory_activity_data
+UNION ALL
+SELECT 'emissions (view)' AS table_name, COUNT(*) AS row_count FROM emissions
+UNION ALL
+SELECT 'scope2_market (view)' AS table_name, COUNT(*) AS row_count FROM scope2_market
+UNION ALL
+SELECT 'facility_totals (view)' AS table_name, COUNT(*) AS row_count FROM facility_totals
+UNION ALL
+SELECT 'company_summary (view)' AS table_name, COUNT(*) AS row_count FROM company_summary;

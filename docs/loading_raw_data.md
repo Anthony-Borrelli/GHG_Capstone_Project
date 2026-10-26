@@ -48,7 +48,7 @@ If step 1 succeeds, the batch file runs `load/clean_data.sql`. That file:
 
 1. Turns on `.bail on`, so the run stops at the first error.
 2. Turns on `PRAGMA foreign_keys = ON`, so any row that points at a missing parent (an account not in `map_utility`, a unit not in `vehicle`) stops the run instead of loading silently.
-3. Runs each script in `sql/` with `.read`, from `03_clean_financial.sql` upward: the cleaning scripts (03 to 14), then the merged tables (15) and the activity tables (16). The order matters: parent tables are filled before the tables that point to them.
+3. Runs each script in `sql/` with `.read`, from `03_clean_financial.sql` upward: the cleaning scripts (03 to 14), then the merged tables (15), the activity tables (16), the estimates (17), the emissions views (18) and the results views (19). The order matters: parent tables are filled before the tables that point to them.
 4. Prints the number of foreign key problems (expect 0) and the row count of every clean table.
 
 Inside each cleaning script, the `INSERT`s run parent first and the `DELETE`s at the top run child first, the same order as the `CREATE` and `DROP` sections of `02_create_clean_tables.sql`.
@@ -142,7 +142,11 @@ Loading through sqlite3 also keeps every value exactly as it appears in the file
 | refrigerant_service | 327 | Polar (192) and ArcticAir (135) stacked; ArcticAir converted from kg to lb |
 | utility_bill | 491 | UtilityPay (344, cancelled bills removed), EnergyHub (93), Mesa (42), Valley (12); all in kWh or MMBtu |
 | fleet_activity | 4,556 | one row per vehicle, month and fuel type: fuel cards (4,496) with telematics miles on on-road rows, plus leased car mileage claims (60, gallons = miles / rated MPG). Propane forklifts have no unit number and load into inventory_activity_data instead |
-| inventory_activity_data | 5,206 | one table for every source: utilities (403, prorated by day, 2025 days only), fleet (4,556, one row per vehicle-month), propane (99), generators (14, annual rows with month NULL), refrigerants (134, by facility, month and gas; service events with no emissions dropped). All rows is_estimated = 0 |
+| inventory_activity_data | 5,233 | one table for every source: utilities (403, prorated by day, 2025 days only), fleet (4,556, one row per vehicle-month), propane (99), generators (14, annual rows with month NULL), refrigerants (134, by facility, month and gas; service events with no emissions dropped), plus 27 estimated rows from script 17 (DC-ATL bill gap 3, SO-BOS floor-area estimate 24) with is_estimated = 1 |
+| emissions (view) | 5,233 | one row per inventory_activity_data row with co2_t, ch4_t, n2o_t, hfc_co2e_t, location_based_tco2e and memo_hcfc_co2e_t in metric tonnes. A view stores no data: it recalculates from the tables each time it is queried, and script 18 drops and recreates it on every rebuild |
+| scope2_market (view) | 19 | one row per facility for the year: electricity MWh, MWh covered by 2025-vintage RECs (capped at the facility's use) and the Sacramento green tariff, uncovered MWh, and market-based tCO2e (supplier-specific rate where published, otherwise Green-e residual mix CO2, with eGRID CH4 and N2O). Also created by script 18 |
+| facility_totals (view) | 19 | one row per facility: Scope 1, Scope 2 location-based and Scope 2 market-based tCO2e. Created by script 19 |
+| company_summary (view) | 8 | 2025 and 2024 location- and market-based tCO2e by scope and source category (2024 from base_year_inventory). Created by script 19 |
 
 ## Troubleshooting
 
@@ -164,6 +168,6 @@ Loading through sqlite3 also keeps every value exactly as it appears in the file
 
 ## Adding a new cleaning script
 
-1. Save it in `sql/` with the next number, for example `17_...sql`.
+1. Save it in `sql/` with the next number, for example `20_...sql`.
 2. Add a `.print` and a `.read` line for it to `load/clean_data.sql`, in its numbered position.
 3. Add its tables to the row count query at the bottom of `load/clean_data.sql`, and their counts to the clean row count table above.
