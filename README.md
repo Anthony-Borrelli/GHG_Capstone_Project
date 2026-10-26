@@ -88,7 +88,7 @@ flowchart LR
 | --- | --- |
 | Data cleaning and validation | Duplicates, unit and date standardisation, reconciled row counts at every stage ([loading doc](docs/loading_raw_data.md)) |
 | Data modelling | Layered raw / clean / merged / activity design, 37 enforced foreign keys ([ERD](docs/ERD.md)) |
-| Advanced SQL | CTEs, window functions, recursive CTE calendar, conditional aggregation, CROSS JOIN unpivot, date arithmetic, views |
+| Advanced SQL | CTEs, recursive CTE calendar, conditional aggregation, CROSS JOIN unpivot, date arithmetic, views |
 | Multi-source reconciliation | Matching facilities across IDs, site numbers, account numbers and addresses |
 | Business analysis | KPIs, intensity metrics, correlation, before/after impact, recommendations with numbers |
 | Quality assurance | Every step checked for row counts, totals, duplicates and NULLs; results validated against an independent benchmark |
