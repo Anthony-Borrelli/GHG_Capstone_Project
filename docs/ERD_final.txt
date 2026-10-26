@@ -1,0 +1,549 @@
+// Final ERD (as built), generated from the database schema on 2026-10-25.
+// Paste into https://dbdiagram.io to render. The Milestone 1 proposed ERD is docs/ERD.txt.
+
+// ===== Reference =====
+Table "ref_building_intensity" {
+  "building_type" TEXT [pk]
+  "kwh_per_sqft" REAL
+  "mmbtu_per_sqft" REAL
+  "source" TEXT
+}
+
+Table "ref_egrid_rate" {
+  "egrid_subregion" TEXT [not null]
+  "data_year" INTEGER [not null]
+  "co2_lb_per_mwh" REAL [not null]
+  "ch4_lb_per_mwh" REAL [not null]
+  "n2o_lb_per_mwh" REAL [not null]
+  "source" TEXT
+  indexes {
+    (egrid_subregion, data_year) [pk]
+  }
+}
+
+Table "ref_gwp" {
+  "gas" TEXT [pk]
+  "gwp" REAL [not null]
+  "is_scope1_included" INTEGER [not null]
+  "source" TEXT
+}
+
+Table "ref_mobile_ch4_n2o_nonroad" {
+  "equipment_type" TEXT [not null]
+  "fuel_type" TEXT [not null]
+  "ch4_g_per_gal" REAL [not null]
+  "n2o_g_per_gal" REAL [not null]
+  "source" TEXT
+  indexes {
+    (equipment_type, fuel_type) [pk]
+  }
+}
+
+Table "ref_mobile_ch4_n2o_onroad" {
+  "vehicle_class" TEXT [not null]
+  "fuel_type" TEXT [not null]
+  "model_year_start" INTEGER [not null]
+  "model_year_end" INTEGER [not null]
+  "ch4_g_per_mile" REAL [not null]
+  "n2o_g_per_mile" REAL [not null]
+  "source" TEXT
+  indexes {
+    (vehicle_class, fuel_type, model_year_start) [pk]
+  }
+}
+
+Table "ref_mobile_co2" {
+  "fuel_type" TEXT [pk]
+  "co2_kg_per_gal" REAL [not null]
+  "source" TEXT
+}
+
+Table "ref_residual_mix" {
+  "egrid_subregion" TEXT [not null]
+  "data_year" INTEGER [not null]
+  "co2_lb_per_mwh" REAL [not null]
+  "source" TEXT
+  indexes {
+    (egrid_subregion, data_year) [pk]
+  }
+}
+
+Table "ref_stationary_factor" {
+  "fuel_type" TEXT [pk]
+  "uom" TEXT [not null]
+  "co2_kg_per_unit" REAL [not null]
+  "ch4_g_per_unit" REAL [not null]
+  "n2o_g_per_unit" REAL [not null]
+  "source" TEXT
+}
+
+Table "ref_unit_conversion" {
+  "from_unit" TEXT [not null]
+  "to_unit" TEXT [not null]
+  "factor" REAL [not null]
+  "source" TEXT
+  indexes {
+    (from_unit, to_unit) [pk]
+  }
+}
+
+Table "ref_zip_egrid" {
+  "zip" TEXT [pk]
+  "egrid_subregion" TEXT [not null]
+  "multiple_subregion_flag" INTEGER [not null]
+}
+
+// ===== Mapping =====
+Table "map_activity_type" {
+  "activity_type" TEXT [pk]
+  "fuel_type" TEXT [not null]
+  "scope" TEXT [not null]
+  "source_category" TEXT [not null]
+}
+
+Table "map_calendar_day" {
+  "calendar_date" TEXT [pk]
+  "month" TEXT
+  "year" INTEGER
+}
+
+Table "map_fuel_product" {
+  "product_description" TEXT [pk]
+  "activity_type" TEXT
+}
+
+Table "map_utility" {
+  "account_number" TEXT [pk]
+  "facility_id" TEXT [not null]
+  "utility_name" TEXT
+  "commodity" TEXT
+  "meter_number" TEXT
+  "notes" TEXT
+}
+Ref: map_utility.facility_id > facility.facility_id
+
+Table "map_vehicle_class" {
+  "vehicle_class" TEXT [pk]
+  "hub_vehicle_category" TEXT [not null]
+  "fuel_type" TEXT [not null]
+}
+
+Table "map_weather_station" {
+  "weather_station_id" TEXT [pk]
+  "city" TEXT
+  "state" TEXT
+}
+
+// ===== Clean source =====
+Table "arcticair_log" {
+  "work_order" TEXT [pk]
+  "service_date" TEXT
+  "equipment_id" TEXT [not null]
+  "location" TEXT
+  "job_type" TEXT
+  "refrigerant" TEXT
+  "qty_charged" REAL
+  "qty_recovered" REAL
+  "uom" TEXT
+  "tech_comments" TEXT
+}
+Ref: arcticair_log.equipment_id > refrigeration_equipment.equipment_id
+
+Table "chi_midwest_invoice" {
+  "facility_id" TEXT [not null]
+  "month" TEXT [not null]
+  "customer" TEXT
+  "pipeline_pool" TEXT
+  "nominated_volume_dth" REAL
+  "price_per_dth" REAL
+  indexes {
+    (facility_id, month) [pk]
+  }
+}
+Ref: chi_midwest_invoice.facility_id > facility.facility_id
+
+Table "energyhub_consumption" {
+  "site" TEXT
+  "account_number" TEXT [not null]
+  "utility" TEXT
+  "meter_number" TEXT [not null]
+  "start_date" TEXT [not null]
+  "end_date" TEXT
+  "consumption" REAL
+  "uom" TEXT
+  "cost_usd" REAL
+  "est" TEXT
+  indexes {
+    (meter_number, start_date) [pk]
+  }
+}
+Ref: energyhub_consumption.account_number > map_utility.account_number
+
+Table "facility" {
+  "facility_id" TEXT [pk]
+  "site_number" TEXT
+  "facility_name" TEXT
+  "facility_type" TEXT
+  "street" TEXT
+  "city" TEXT
+  "state" TEXT [not null]
+  "zip" TEXT [not null]
+  "sqft" REAL
+  "ownership" TEXT
+  "utilities_paid_by" TEXT
+  "acquisition_date" TEXT
+  "lease_end_date" TEXT
+  "status" TEXT
+  "weather_station_id" TEXT [not null]
+  "egrid_subregion" TEXT
+  "record_updated" TEXT
+}
+Ref: facility.weather_station_id > map_weather_station.weather_station_id
+Ref: facility.zip > ref_zip_egrid.zip
+
+Table "financial" {
+  "fiscal_year" INTEGER [pk]
+  "net_revenue_usd_millions" REAL
+  "employees_fte" REAL
+}
+
+Table "fuel_card_assignment" {
+  "card_number" TEXT [not null]
+  "unit_number" TEXT [not null]
+  "assigned_from" TEXT [not null]
+  "assigned_to" TEXT
+  indexes {
+    (card_number, assigned_from) [pk]
+  }
+}
+Ref: fuel_card_assignment.unit_number > vehicle.unit_number
+
+Table "fuel_card_transaction" {
+  "transaction_id" TEXT [pk]
+  "card_number" TEXT [not null]
+  "unit_number" TEXT [not null]
+  "transaction_date" TEXT
+  "transaction_time" TEXT
+  "post_date" TEXT
+  "merchant_name" TEXT
+  "merchant_city" TEXT
+  "merchant_state" TEXT
+  "product_description" TEXT
+  "quantity" REAL
+  "uom" TEXT
+  "unit_price_usd" REAL
+  "gross_amount" REAL
+  "odometer" INTEGER
+}
+Ref: fuel_card_transaction.unit_number > vehicle.unit_number
+
+Table "generator_log" {
+  "facility_id" TEXT [not null]
+  "entry_date" TEXT [not null]
+  "entry_type" TEXT [not null]
+  "reading" REAL
+  "uom" TEXT
+  "tank_capacity_gal" REAL
+  indexes {
+    (facility_id, entry_date, entry_type) [pk]
+  }
+}
+Ref: generator_log.facility_id > facility.facility_id
+
+Table "mesa_gas_bill" {
+  "account_number" TEXT [not null]
+  "address" TEXT
+  "prev_read_date" TEXT
+  "curr_read_date" TEXT [not null]
+  "prev_read_ccf" REAL
+  "curr_read_ccf" REAL
+  "therm_multiplier" REAL
+  "amount_due" REAL
+  indexes {
+    (account_number, curr_read_date) [pk]
+  }
+}
+Ref: mesa_gas_bill.account_number > map_utility.account_number
+
+Table "mileage_claim" {
+  "employee_id" TEXT
+  "unit_number" TEXT [not null]
+  "month" TEXT [not null]
+  "miles" REAL
+  "rate_per_mile" REAL
+  indexes {
+    (unit_number, month) [pk]
+  }
+}
+Ref: mileage_claim.unit_number > vehicle.unit_number
+
+Table "operation_kpi" {
+  "facility_id" TEXT [not null]
+  "month" TEXT [not null]
+  "cases_shipped" INTEGER
+  "avg_pallet_positions_used" INTEGER
+  "headcount" INTEGER
+  "operating_hours" INTEGER
+  indexes {
+    (facility_id, month) [pk]
+  }
+}
+Ref: operation_kpi.facility_id > facility.facility_id
+
+Table "polar_log" {
+  "work_order" TEXT [pk]
+  "service_date" TEXT
+  "equipment_id" TEXT [not null]
+  "facility_id" TEXT [not null]
+  "service_type" TEXT
+  "refrigerant" TEXT
+  "qty_charged_lbs" REAL
+  "qty_recovered_lbs" REAL
+  "tech_comments" TEXT
+}
+Ref: polar_log.facility_id > facility.facility_id
+Ref: polar_log.equipment_id > refrigeration_equipment.equipment_id
+
+Table "propane_delivery" {
+  "facility_id" TEXT [not null]
+  "delivery_date" TEXT [not null]
+  "vendor" TEXT
+  "product" TEXT
+  "quantity" REAL
+  "uom" TEXT
+  indexes {
+    (facility_id, delivery_date) [pk]
+  }
+}
+Ref: propane_delivery.facility_id > facility.facility_id
+
+Table "rec_retirement" {
+  "batch_id" TEXT [pk]
+  "tracking_system" TEXT
+  "resource_type" TEXT
+  "generation_location" TEXT
+  "vintage_year" INTEGER
+  "mwh" REAL
+  "retirement_date" TEXT
+  "facility_id" TEXT [not null]
+  "certification" TEXT
+}
+Ref: rec_retirement.facility_id > facility.facility_id
+
+Table "refrigeration_equipment" {
+  "equipment_id" TEXT [pk]
+  "facility_id" TEXT [not null]
+  "equipment_type" TEXT
+  "refrigerant" TEXT [not null]
+  "full_charge_lbs" REAL
+  "install_year" INTEGER
+  "status" TEXT
+  "retired_date" TEXT
+}
+Ref: refrigeration_equipment.refrigerant > ref_gwp.gas
+Ref: refrigeration_equipment.facility_id > facility.facility_id
+
+Table "slc_utility_bill" {
+  "customer" TEXT
+  "account_number" TEXT [not null]
+  "commodity" TEXT
+  "start_date" TEXT [not null]
+  "end_date" TEXT
+  "usage" REAL
+  "uom" TEXT
+  indexes {
+    (account_number, start_date) [pk]
+  }
+}
+Ref: slc_utility_bill.account_number > map_utility.account_number
+
+Table "supplier_emission_rate" {
+  "utility_name" TEXT [not null]
+  "product" TEXT [not null]
+  "data_year" INTEGER [not null]
+  "co2_lb_per_mwh" REAL
+  "source_note" TEXT
+  indexes {
+    (utility_name, product, data_year) [pk]
+  }
+}
+
+Table "telematics_mileage" {
+  "unit_number" TEXT [not null]
+  "month" TEXT [not null]
+  "miles" REAL
+  indexes {
+    (unit_number, month) [pk]
+  }
+}
+Ref: telematics_mileage.unit_number > vehicle.unit_number
+
+Table "utilitypay_bill" {
+  "invoice_number" TEXT [pk]
+  "vendor_name" TEXT
+  "account_number" TEXT [not null]
+  "address" TEXT
+  "commodity" TEXT
+  "bill_date" TEXT
+  "service_start_date" TEXT
+  "service_end_date" TEXT
+  "usage" REAL
+  "uom" TEXT
+  "read_type" TEXT
+  "bill_status" TEXT
+  "current_charges" REAL
+}
+Ref: utilitypay_bill.account_number > map_utility.account_number
+
+Table "valley_consumption" {
+  "account_number" TEXT [not null]
+  "meter_number" TEXT [not null]
+  "address" TEXT
+  "rate_schedule" TEXT
+  "renewable_choice_enrollment" REAL
+  "month" TEXT [not null]
+  "consumption" REAL
+  indexes {
+    (meter_number, month) [pk]
+  }
+}
+Ref: valley_consumption.meter_number > map_utility.meter_number
+Ref: valley_consumption.account_number > map_utility.account_number
+
+Table "vehicle" {
+  "unit_number" TEXT [pk]
+  "vin" TEXT
+  "vehicle_class" TEXT
+  "fuel_type" TEXT
+  "model_year" INTEGER
+  "facility_id" TEXT [not null]
+  "ownership" TEXT
+  "in_service_date" TEXT
+  "out_of_service_date" TEXT
+  "current_card_number" TEXT
+  "telematics" TEXT
+  "rated_mpg" REAL
+}
+Ref: vehicle.facility_id > facility.facility_id
+
+Table "weather_degree_days" {
+  "weather_station_id" TEXT [not null]
+  "month" TEXT [not null]
+  "hdd_65f" REAL
+  "cdd_65f" REAL
+  indexes {
+    (weather_station_id, month) [pk]
+  }
+}
+Ref: weather_degree_days.weather_station_id > map_weather_station.weather_station_id
+
+// ===== Base year =====
+Table "base_year_activity" {
+  "activity_id" INTEGER [pk]
+  "facility_id" TEXT [not null]
+  "month" TEXT
+  "scope" TEXT
+  "source_category" TEXT
+  "activity_type" TEXT
+  "quantity" REAL
+  "uom" TEXT
+  "vehicle_class" TEXT
+  "model_year" INTEGER
+  "miles" REAL
+  "refrigerant" TEXT
+}
+Ref: base_year_activity.facility_id > facility.facility_id
+
+Table "base_year_inventory" {
+  "facility_id" TEXT [not null]
+  "scope" TEXT
+  "source_category" TEXT
+  "activity_type" TEXT [not null]
+  "co2_t" REAL
+  "ch4_t" REAL
+  "n2o_t" REAL
+  "hfc_co2e_t" REAL
+  "location_based_tco2e" REAL
+  "market_based_tco2e" REAL
+  "memo_hcfc_co2e_t" REAL
+  indexes {
+    (facility_id, activity_type) [pk]
+  }
+}
+Ref: base_year_inventory.facility_id > facility.facility_id
+
+// ===== Merged =====
+Table "refrigerant_service" {
+  "work_order" TEXT [not null]
+  "service_date" TEXT
+  "equipment_id" TEXT [not null]
+  "facility_id" TEXT [not null]
+  "service_type" TEXT
+  "refrigerant" TEXT
+  "qty_charged_lbs" REAL
+  "qty_recovered_lbs" REAL
+  "tech_comments" TEXT
+  "source_system" TEXT [not null]
+  indexes {
+    (source_system, work_order) [pk]
+  }
+}
+Ref: refrigerant_service.facility_id > facility.facility_id
+Ref: refrigerant_service.equipment_id > refrigeration_equipment.equipment_id
+
+Table "utility_bill" {
+  "utility_bill_id" INTEGER [pk]
+  "facility_id" TEXT [not null]
+  "account_number" TEXT [not null]
+  "meter_number" TEXT
+  "service_start_date" TEXT [not null]
+  "service_end_date" TEXT [not null]
+  "commodity" TEXT [not null]
+  "quantity" REAL [not null]
+  "uom" TEXT [not null]
+  "is_estimated" INTEGER
+  "utility_name" TEXT
+  "source_system" TEXT
+  "source_ref" TEXT
+}
+Ref: utility_bill.account_number > map_utility.account_number
+Ref: utility_bill.facility_id > facility.facility_id
+
+// ===== Activity =====
+Table "fleet_activity" {
+  "fleet_activity_id" INTEGER [pk]
+  "facility_id" TEXT [not null]
+  "unit_number" TEXT [not null]
+  "month" TEXT [not null]
+  "activity_type" TEXT [not null]
+  "quantity" REAL [not null]
+  "uom" TEXT [not null]
+  "miles" REAL
+  "source_system" TEXT
+  indexes {
+    (unit_number, month, activity_type) [unique]
+  }
+}
+Ref: fleet_activity.activity_type > map_activity_type.activity_type
+Ref: fleet_activity.unit_number > vehicle.unit_number
+Ref: fleet_activity.facility_id > facility.facility_id
+
+Table "inventory_activity_data" {
+  "activity_id" INTEGER [pk]
+  "reporting_year" INTEGER [not null]
+  "facility_id" TEXT [not null]
+  "month" TEXT
+  "scope" TEXT [not null]
+  "source_category" TEXT [not null]
+  "activity_type" TEXT [not null]
+  "quantity" REAL [not null]
+  "uom" TEXT [not null]
+  "is_estimated" INTEGER [not null]
+  "vehicle_class" TEXT
+  "model_year" INTEGER
+  "miles" REAL
+  "refrigerant" TEXT
+}
+Ref: inventory_activity_data.refrigerant > ref_gwp.gas
+Ref: inventory_activity_data.activity_type > map_activity_type.activity_type
+Ref: inventory_activity_data.facility_id > facility.facility_id

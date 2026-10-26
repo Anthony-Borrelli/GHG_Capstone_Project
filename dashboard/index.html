@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CCP GHG Dashboard</title>
+<!-- Draft written by Claude on 2026-10-25 (see docs/claude_changes_log.md). Data: dashboard/data.js, built by build_dashboard.py -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --surface-0: #f4f3f0; --surface-1: #fcfcfb; --border: #e6e5e0;
+  --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #8a8984;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --neutral: #b8b7b0;
+  --good: #1baf7a; --bad: #e34948;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #121211; --surface-1: #1a1a19; --border: #2e2e2c;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --neutral: #5d5c57;
+    --good: #199e70; --bad: #e66767;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #121211; --surface-1: #1a1a19; --border: #2e2e2c;
+  --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e86;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --neutral: #5d5c57;
+  --good: #199e70; --bad: #e66767;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-0); color: var(--text-primary);
+  font: 15px/1.5 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 1180px; margin: 0 auto; padding: 24px 16px 48px; }
+header h1 { font-size: 24px; font-weight: 600; margin: 0 0 4px; }
+header p { margin: 0; color: var(--text-secondary); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 20px 0; }
+.tile { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile .label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .04em; }
+.tile .value { font-size: 26px; font-weight: 600; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.tile .delta { font-size: 13px; color: var(--text-secondary); }
+.up { color: var(--bad); } .down { color: var(--good); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px; padding: 16px; min-width: 0; }
+.card h2 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
+.card .sub { font-size: 13px; color: var(--text-secondary); margin: 0 0 10px; }
+.chart { position: relative; height: 300px; }
+.wide { grid-column: 1 / -1; }
+.controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 4px 0 12px; }
+select, button { font: inherit; font-size: 14px; color: var(--text-primary); background: var(--surface-1);
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
+th { color: var(--text-secondary); font-weight: 500; cursor: pointer; user-select: none; }
+.table-wrap { overflow-x: auto; }
+.stat { font-size: 13px; color: var(--text-secondary); }
+.stat b { color: var(--text-primary); }
+footer { margin-top: 24px; font-size: 12px; color: var(--text-muted); }
+footer a { color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Cobalt Creek Provisions: 2025 GHG inventory</h1>
+  <p>Scope 1 and 2 emissions for 19 facilities, calculated in SQLite from 23 raw source files. Fictional company, real EPA and Green-e factors.</p>
+</header>
+
+<section class="tiles" id="tiles"></section>
+
+<section class="grid">
+  <div class="card wide">
+    <h2>Monthly emissions by source, 2025</h2>
+    <p class="sub">Location-based tCO2e. Generators are reported annually and are not shown by month.</p>
+    <div class="chart"><canvas id="monthly"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Change from the 2024 base year</h2>
+    <p class="sub">Location-based tCO2e by source category.</p>
+    <div class="chart"><canvas id="yoy"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Scope 2: location vs market-based</h2>
+    <p class="sub">tCO2e at the four sites with RECs or the Sacramento green tariff.</p>
+    <div class="chart"><canvas id="scope2"></canvas></div>
+  </div>
+
+  <div class="card wide">
+    <h2>What drives energy use</h2>
+    <div class="controls">
+      <label for="site">Facility</label>
+      <select id="site"></select>
+      <span class="stat" id="r-values"></span>
+    </div>
+    <div class="grid">
+      <div><p class="sub">Natural gas vs heating degree days (each dot is a month)</p><div class="chart"><canvas id="gas"></canvas></div></div>
+      <div><p class="sub">On-road diesel vs cases shipped (each dot is a month)</p><div class="chart"><canvas id="diesel"></canvas></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Refrigerant leak rate</h2>
+    <p class="sub">Leaked in 2025 as % of installed charge, distribution centres.</p>
+    <div class="chart"><canvas id="leak"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>LED retrofit: electricity vs 2024</h2>
+    <p class="sub">Same-month change, Philadelphia + Columbus vs other distribution centres.</p>
+    <div class="chart"><canvas id="retrofit"></canvas></div>
+  </div>
+
+  <div class="card wide">
+    <h2>Facility results</h2>
+    <p class="sub">Click a column to sort. Intensity uses location-based totals.</p>
+    <div class="table-wrap"><table id="facilities"></table></div>
+  </div>
+</section>
+
+<footer>
+  Data: <code>sql/18_emissions_view.sql</code>, <code>sql/19_results_view.sql</code>, <code>sql/20_analysis.sql</code>.
+  Factors: EPA GHG Emission Factors Hub 2025 (eGRID2023), Green-e 2025 Residual Mix, IPCC AR5 GWPs.
+  <button id="theme" type="button">Toggle theme</button>
+</footer>
+</main>
+
+<script src="data.js"></script>
+<script src="vendor/chart.umd.js"></script><!-- Chart.js 4.4.1, MIT licence (vendor/chart.js-LICENSE.md) -->
+<script>
+(function () {
+  const D = window.GHG_DATA;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const fmt = (v, d = 0) => Number(v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+  const CATS = ["Stationary Combustion", "Mobile Combustion", "Fugitive Emissions", "Purchased Electricity"];
+  const catVar = ["--s1", "--s2", "--s3", "--s4"];
+  const charts = [];
+
+  // ---------- KPI tiles
+  const k24 = D.kpi.find(k => k.year === 2024), k25 = D.kpi.find(k => k.year === 2025);
+  const pct = (a, b) => 100 * (b - a) / a;
+  const tile = (label, v25, v24, unit, dec = 0, invert = false) => {
+    let delta = "";
+    if (v24 != null) {
+      const p = pct(v24, v25);
+      const cls = (p > 0) !== invert ? "up" : "down";
+      delta = `<div class="delta"><span class="${cls}">${p > 0 ? "▲" : "▼"} ${fmt(Math.abs(p), 1)}%</span> vs 2024</div>`;
+    }
+    return `<div class="tile"><div class="label">${label}</div><div class="value">${fmt(v25, dec)}${unit}</div>${delta}</div>`;
+  };
+  document.getElementById("tiles").innerHTML =
+    tile("Scope 1 tCO2e", k25.s1, k24.s1, "") +
+    tile("Scope 2 location tCO2e", k25.s2l, k24.s2l, "") +
+    tile("Scope 2 market tCO2e", k25.s2m, k24.s2m, "") +
+    tile("tCO2e per $M revenue", k25.per_musd, k24.per_musd, "", 1) +
+    tile("tCO2e per 1,000 cases", k25.per_kcases, k24.per_kcases, "", 3) +
+    tile("Estimated share", D.estimatedPct, null, "%", 1);
+
+  // ---------- chart defaults
+  function baseOptions(extra) {
+    return Object.assign({
+      responsive: true, maintainAspectRatio: false, animation: false,
+      interaction: { mode: "nearest", intersect: false },
+      plugins: { legend: { labels: { color: css("--text-secondary"), boxWidth: 12, boxHeight: 12 } },
+        tooltip: { backgroundColor: css("--surface-1"), titleColor: css("--text-primary"), bodyColor: css("--text-secondary"),
+          borderColor: css("--border"), borderWidth: 1 } },
+      scales: {
+        x: { ticks: { color: css("--text-secondary") }, grid: { color: css("--border") } },
+        y: { ticks: { color: css("--text-secondary") }, grid: { color: css("--border") } }
+      }
+    }, extra || {});
+  }
+
+  function draw() {
+    charts.forEach(c => c.destroy()); charts.length = 0;
+    const surface = css("--surface-1");
+
+    // monthly stacked
+    const months = [...new Set(D.monthly.map(r => r.month))].sort();
+    const mcats = CATS.filter(c => c !== "Stationary Combustion" || D.monthly.some(r => r.cat === c));
+    charts.push(new Chart(document.getElementById("monthly"), {
+      type: "bar",
+      data: { labels: months, datasets: mcats.map(c => ({
+        label: c, backgroundColor: css(catVar[CATS.indexOf(c)]), borderColor: surface, borderWidth: 1, borderRadius: 3,
+        data: months.map(m => (D.monthly.find(r => r.month === m && r.cat === c) || { t: 0 }).t) })) },
+      options: baseOptions({ interaction: { mode: "index", intersect: false },
+        scales: { x: { stacked: true, ticks: { color: css("--text-secondary") }, grid: { display: false } },
+                  y: { stacked: true, ticks: { color: css("--text-secondary") }, grid: { color: css("--border") }, title: { display: true, text: "tCO2e", color: css("--text-secondary") } } } })
+    }));
+
+    // yoy
+    const order = ["Fugitive Emissions", "Mobile Combustion", "Purchased Electricity", "Stationary Combustion"];
+    charts.push(new Chart(document.getElementById("yoy"), {
+      type: "bar",
+      data: { labels: order, datasets: [
+        { label: "2024", backgroundColor: css("--neutral"), borderRadius: 3, data: order.map(c => D.yoy.find(r => r.cat === c).y2024) },
+        { label: "2025", backgroundColor: css("--s1"), borderRadius: 3, data: order.map(c => D.yoy.find(r => r.cat === c).y2025) }] },
+      options: baseOptions({ indexAxis: "y", interaction: { mode: "index", intersect: false },
+        plugins: Object.assign(baseOptions().plugins, { tooltip: Object.assign(baseOptions().plugins.tooltip, {
+          callbacks: { afterBody: items => { const r = D.yoy.find(x => x.cat === items[0].label); return `Change: ${fmt(pct(r.y2024, r.y2025), 1)}%`; } } }) }) })
+    }));
+
+    // scope 2
+    const s2 = [...D.facilities].sort((a, b) => (b.s2l - b.s2m) - (a.s2l - a.s2m)).slice(0, 4);   // the four sites with RECs or a green tariff
+    charts.push(new Chart(document.getElementById("scope2"), {
+      type: "bar",
+      data: { labels: s2.map(f => f.id), datasets: [
+        { label: "Location-based", backgroundColor: css("--neutral"), borderRadius: 3, data: s2.map(f => f.s2l) },
+        { label: "Market-based", backgroundColor: css("--s3"), borderRadius: 3, data: s2.map(f => f.s2m) }] },
+      options: baseOptions({ interaction: { mode: "index", intersect: false } })
+    }));
+
+    // drivers
+    const site = document.getElementById("site").value;
+    const pearson = pts => {
+      const n = pts.length; if (n < 3) return null;
+      const mx = pts.reduce((s, p) => s + p.x, 0) / n, my = pts.reduce((s, p) => s + p.y, 0) / n;
+      let sxy = 0, sxx = 0, syy = 0;
+      pts.forEach(p => { sxy += (p.x - mx) * (p.y - my); sxx += (p.x - mx) ** 2; syy += (p.y - my) ** 2; });
+      return sxy / Math.sqrt(sxx * syy);
+    };
+    const gas = D.gasHdd.filter(r => r.id === site).map(r => ({ x: r.hdd, y: r.gas, m: r.month }));
+    const dsl = D.dieselCases.filter(r => r.id === site).map(r => ({ x: r.cases, y: r.gal, m: r.month }));
+    const rg = pearson(gas), rd = pearson(dsl);
+    document.getElementById("r-values").innerHTML =
+      `Pearson r: gas vs HDD <b>${rg == null ? "n/a" : fmt(rg, 2)}</b> · diesel vs cases <b>${rd == null ? "n/a" : fmt(rd, 2)}</b>`;
+    const scatter = (id, pts, xl, yl, color) => charts.push(new Chart(document.getElementById(id), {
+      type: "scatter",
+      data: { datasets: [{ label: site, data: pts, backgroundColor: css(color), borderColor: surface, borderWidth: 2, pointRadius: 6, pointHoverRadius: 8 }] },
+      options: baseOptions({ plugins: Object.assign(baseOptions().plugins, { legend: { display: false },
+          tooltip: Object.assign(baseOptions().plugins.tooltip, { callbacks: { label: c => `${c.raw.m}: ${fmt(c.raw.x)} ${xl}, ${fmt(c.raw.y)} ${yl}` } }) }),
+        scales: { x: { title: { display: true, text: xl, color: css("--text-secondary") }, ticks: { color: css("--text-secondary") }, grid: { color: css("--border") } },
+                  y: { title: { display: true, text: yl, color: css("--text-secondary") }, ticks: { color: css("--text-secondary") }, grid: { color: css("--border") } } } })
+    }));
+    scatter("gas", gas, "HDD", "MMBtu", "--s1");
+    scatter("diesel", dsl, "cases", "gal", "--s2");
+
+    // leak
+    charts.push(new Chart(document.getElementById("leak"), {
+      type: "bar",
+      data: { labels: D.leak.map(r => r.id), datasets: [{ label: "Leak rate %", borderRadius: 3,
+        backgroundColor: D.leak.map(r => r.id === "DC-CHI" ? css("--s2") : css("--s1")), data: D.leak.map(r => r.pct) }] },
+      options: baseOptions({ indexAxis: "y", plugins: Object.assign(baseOptions().plugins, { legend: { display: false },
+        tooltip: Object.assign(baseOptions().plugins.tooltip, { callbacks: { label: c => { const r = D.leak[c.dataIndex]; return `${fmt(r.pct, 1)}%: ${fmt(r.lb)} of ${fmt(r.charge)} lb`; } } }) }) })
+    }));
+
+    // retrofit
+    const mnames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    charts.push(new Chart(document.getElementById("retrofit"), {
+      type: "line",
+      data: { labels: mnames, datasets: [
+        { label: "PHL + CMH (retrofit)", borderColor: css("--s2"), backgroundColor: css("--s2"), borderWidth: 2, pointRadius: 4, data: D.retrofit.map(r => r.retro) },
+        { label: "Other DCs", borderColor: css("--neutral"), backgroundColor: css("--neutral"), borderWidth: 2, pointRadius: 4, data: D.retrofit.map(r => r.others) }] },
+      options: baseOptions({ interaction: { mode: "index", intersect: false },
+        scales: { x: { ticks: { color: css("--text-secondary") }, grid: { display: false } },
+                  y: { ticks: { color: css("--text-secondary"), callback: v => v + "%" }, grid: { color: css("--border") } } } })
+    }));
+  }
+
+  // ---------- facility selector
+  const sel = document.getElementById("site");
+  [...new Set(D.gasHdd.map(r => r.id))].sort().forEach(id => sel.add(new Option(id, id)));
+  sel.value = "DC-CHI";
+  sel.addEventListener("change", draw);
+
+  // ---------- table
+  const rows = D.facilities.map(f => ({
+    id: f.id, name: f.city + ", " + f.state, s1: f.s1, s2l: f.s2l, s2m: f.s2m, total: f.s1 + f.s2l,
+    sqft: 1000 * (f.s1 + f.s2l) / f.sqft, cases: f.cases ? (f.s1 + f.s2l) / (f.cases / 1000) : null }));
+  const cols = [["id", "Facility", 0], ["name", "Location", 0], ["s1", "Scope 1 t", 0], ["s2l", "Scope 2 loc t", 0],
+                ["s2m", "Scope 2 mkt t", 0], ["total", "Total loc t", 0], ["sqft", "kg / sq ft", 1], ["cases", "t / 1,000 cases", 3]];
+  let sortKey = "total", sortDir = -1;
+  function renderTable() {
+    const r = [...rows].sort((a, b) => { const x = a[sortKey], y = b[sortKey];
+      if (x == null) return 1; if (y == null) return -1; return (x > y ? 1 : x < y ? -1 : 0) * sortDir; });
+    document.getElementById("facilities").innerHTML =
+      "<thead><tr>" + cols.map(c => `<th data-k="${c[0]}">${c[1]}${c[0] === sortKey ? (sortDir < 0 ? " ▼" : " ▲") : ""}</th>`).join("") + "</tr></thead><tbody>" +
+      r.map(x => "<tr>" + cols.map(c => `<td>${typeof x[c[0]] === "number" ? fmt(x[c[0]], c[2]) : (x[c[0]] ?? "–")}</td>`).join("") + "</tr>").join("") + "</tbody>";
+    document.querySelectorAll("#facilities th").forEach(th => th.onclick = () => {
+      const k = th.dataset.k; sortDir = k === sortKey ? -sortDir : -1; sortKey = k; renderTable(); });
+  }
+  renderTable();
+
+  // ---------- theme toggle
+  document.getElementById("theme").onclick = () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark"; draw();
+  };
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+  draw();
+})();
+</script>
+</body>
+</html>
